@@ -1,0 +1,2579 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "V\u00e5tservietter 64stk Lillego",
+            "brand": "Lillego",
+            "vendor": "Unil",
+            "ean": "7035620025037",
+            "url": "https://meny.no/Varer/barneprodukter/babypleie/vatservietter/vatservietter-7035620025037",
+            "image": "https://bilder.ngdata.no/7035620025037/meny/large.jpg",
+            "category": [
+                {
+                    "id": 16,
+                    "depth": -2,
+                    "name": "Barneprodukter"
+                },
+                {
+                    "id": 17,
+                    "depth": -1,
+                    "name": "Babypleie"
+                },
+                {
+                    "id": 18,
+                    "depth": 0,
+                    "name": "V\u00e5tservietter"
+                }
+            ],
+            "description": "LilleGo\u2019 sensitive v\u00e5tservietter er milde og parfymefrie. Ideelle til bleiestell, samt vask av ansikt og hender. V\u00e5tserviettene er dermatologisk testet og dokumentert egnet for sensitiv hud.",
+            "ingredients": "Ingredients: \naqua, glycerin, sodium laureth-11 carboxylate, laureth-10, sodium benzoate, lactic acid, potassium sorbate.\n\n",
+            "current_price": 24.9,
+            "current_unit_price": 0.39,
+            "weight": 64,
+            "weight_unit": "piece",
+            "store": {
+                "name": "Meny",
+                "code": "MENY_NO",
+                "url": "https://meny.no/Varer",
+                "logo": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/logos/Meny.svg"
+            },
+            "price_history": [
+                {
+                    "price": 24.9,
+                    "date": "2024-04-25T07:06:00.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-25T07:03:26.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-25T07:00:31.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-23T07:06:49.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-23T07:03:36.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-23T07:00:43.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-22T07:05:57.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-22T07:03:29.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-22T07:00:38.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-21T07:06:48.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-21T07:03:56.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-21T07:00:41.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-20T07:05:30.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-20T07:03:20.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-20T07:00:31.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-19T07:06:26.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-19T07:03:51.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-19T07:00:39.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-18T07:05:42.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-18T07:03:32.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-18T07:00:43.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-17T07:05:08.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-17T07:02:43.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-17T07:00:35.000000Z"
+                },
+                {
+                    "price": 24.9,
+                    "date": "2024-04-16T07:05:49.000000Z"
+                }
+            ],
+            "allergens": [],
+            "nutrition": [],
+            "labels": [],
+            "created_at": "2022-01-09T19:28:08.000000Z",
+            "updated_at": "2024-04-25T07:06:00.000000Z"
+        },
+        {
+            "id": 2,
+            "name": "Bananas \u00d8kol 4mnd 70g Ellas",
+            "brand": "Ellas",
+            "vendor": "Jensen & co as",
+            "ean": "5060107332959",
+            "url": "https://joker.no/nettbutikk/varer/barneprodukter/barnedessert/bananas-5060107332959",
+            "image": "https://bilder.ngdata.no/5060107332959/kmh/large.jpg",
+            "category": [
+                {
+                    "id": 16,
+                    "depth": -1,
+                    "name": "Barneprodukter"
+                },
+                {
+                    "id": 25,
+                    "depth": 0,
+                    "name": "Barnedessert"
+                }
+            ],
+            "description": "Fruktpur\u00e9 av kun \u00f8kologisk banan av beste kvalitet, p\u00e5 praktisk klemmepose. Passer for de minste fra 4 mnd opp til 4 \u00e5r. Perfekt som tilvenning til fast f\u00f8de og nye smaker for minstemann.",
+            "ingredients": "100% bananer, sitronjuicekonsentrat",
+            "current_price": 17.9,
+            "current_unit_price": 255.71,
+            "weight": 70,
+            "weight_unit": "g",
+            "store": {
+                "name": "Joker",
+                "code": "JOKER_NO",
+                "url": "https://joker.no/nettbutikk/varer",
+                "logo": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/logos/Joker.svg"
+            },
+            "price_history": [
+                {
+                    "price": 17.9,
+                    "date": "2024-04-25T07:00:47.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-23T07:00:48.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-22T07:00:46.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-21T07:00:38.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-20T07:00:43.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-19T07:00:43.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-18T07:00:48.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-17T07:00:49.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-16T07:00:43.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-15T07:00:53.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-14T07:01:00.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-13T07:01:16.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-12T07:01:13.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-11T07:01:09.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-10T07:01:19.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-09T07:01:13.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-08T07:01:08.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-07T07:01:17.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-06T07:01:04.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-05T07:00:59.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-04T07:00:59.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-03T07:00:58.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-02T07:00:51.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-04-01T07:00:58.000000Z"
+                },
+                {
+                    "price": 17.9,
+                    "date": "2024-03-31T07:00:46.000000Z"
+                }
+            ],
+            "allergens": [
+                {
+                    "code": "blotdyr",
+                    "display_name": "Bl\u00f8tdyr",
+                    "contains": "NO"
+                },
+                {
+                    "code": "egg",
+                    "display_name": "Egg",
+                    "contains": "NO"
+                },
+                {
+                    "code": "fisk",
+                    "display_name": "Fisk",
+                    "contains": "NO"
+                },
+                {
+                    "code": "gluten",
+                    "display_name": "Gluten",
+                    "contains": "NO"
+                },
+                {
+                    "code": "lupiner",
+                    "display_name": "Lupiner",
+                    "contains": "NO"
+                },
+                {
+                    "code": "melk",
+                    "display_name": "Melk",
+                    "contains": "NO"
+                },
+                {
+                    "code": "notter",
+                    "display_name": "N\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "peanotter",
+                    "display_name": "Pean\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "selleri",
+                    "display_name": "Selleri",
+                    "contains": "NO"
+                },
+                {
+                    "code": "sennep",
+                    "display_name": "Sennep",
+                    "contains": "NO"
+                },
+                {
+                    "code": "sesam",
+                    "display_name": "Sesam",
+                    "contains": "NO"
+                },
+                {
+                    "code": "skalldyr",
+                    "display_name": "Skalldyr",
+                    "contains": "NO"
+                },
+                {
+                    "code": "soya",
+                    "display_name": "Soya",
+                    "contains": "NO"
+                },
+                {
+                    "code": "sulfitt",
+                    "display_name": "Sulfitt",
+                    "contains": "NO"
+                },
+                {
+                    "code": "cashewnott",
+                    "display_name": "Cashewn\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "hasselnott",
+                    "display_name": "Hasseln\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "macadamianott",
+                    "display_name": "Macademiann\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "mandel",
+                    "display_name": "Mandler",
+                    "contains": "NO"
+                },
+                {
+                    "code": "paranott",
+                    "display_name": "Paran\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "pekannott",
+                    "display_name": "Pekann\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "pistasjnott",
+                    "display_name": "Pistasjn\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "valnott",
+                    "display_name": "Valn\u00f8tter",
+                    "contains": "NO"
+                }
+            ],
+            "nutrition": [
+                {
+                    "code": "energi_kcal",
+                    "display_name": "Kalorier",
+                    "amount": 90,
+                    "unit": "kcal"
+                },
+                {
+                    "code": "energi_kj",
+                    "display_name": "Energi",
+                    "amount": 381,
+                    "unit": "kj"
+                },
+                {
+                    "code": "fett_totalt",
+                    "display_name": "Fett",
+                    "amount": 0.5,
+                    "unit": "g"
+                },
+                {
+                    "code": "karbohydrater",
+                    "display_name": "Karbohydrater",
+                    "amount": 20.2,
+                    "unit": "g"
+                },
+                {
+                    "code": "kostfiber",
+                    "display_name": "Kostfiber",
+                    "amount": 1.7,
+                    "unit": "g"
+                },
+                {
+                    "code": "mettet_fett",
+                    "display_name": "Mettet fett",
+                    "amount": 0.1,
+                    "unit": "g"
+                },
+                {
+                    "code": "protein",
+                    "display_name": "Protein",
+                    "amount": 1,
+                    "unit": "g"
+                },
+                {
+                    "code": "salt",
+                    "display_name": "Salt",
+                    "amount": 0.09,
+                    "unit": "g"
+                },
+                {
+                    "code": "sukkerarter",
+                    "display_name": "Sukkerarter",
+                    "amount": 19.5,
+                    "unit": "g"
+                }
+            ],
+            "labels": [
+                {
+                    "name": "e_merket",
+                    "display_name": "e-merket",
+                    "description": "E-merket er en valgfri merkeordning for ferdigpakninger i EU/E\u00d8S-land, som sikrer korrekt nettoinnhold. Det gir forbrukerne trygghet og tillit til produktene de kj\u00f8per.",
+                    "organization": null,
+                    "alternative_names": null,
+                    "type": null,
+                    "year_established": 2008,
+                    "about": "<div>\u212e-tegnet, ogs\u00e5 kjent som e-merket eller e-symbolet, er en valgfri merkeordning for ferdigpakninger som eksporteres mellom EU/E\u00d8S-land, inkludert Norge. Regelverket for e-merket er basert p\u00e5 <a href=\"https://eur-lex.europa.eu/legal-content/EN/LSU/?uri=celex:31976L0211\">EU-direktiv 76/211/EEC</a> og implementeres i Norge gjennom E\u00d8S-avtalen og <a href=\"https://lovdata.no/dokument/LTI/forskrift/2007-12-21-1730\">forskriften om krav til nettoinnhold i ferdigpakninger</a>. \u212e-tegnet st\u00e5r for \"quantit\u00e9 estim\u00e9e\" (fransk for \"antatt mengde\").<br><br>Form\u00e5let med e-merket er \u00e5 sikre at ferdigpakninger inneholder minst like mye som angitt p\u00e5 pakken. Merket brukes p\u00e5 produkter fylt til forh\u00e5ndsbestemte vektklasser eller volum, fra 5 gram/5 ml til 10 kg/10 l. Grenser er fastsatt for tillatt avvik fra oppgitt innhold i hver pakning.<br><br>Bedrifter kan velge \u00e5 bruke e-merket, men m\u00e5 f\u00f8lge forskriften og melde fra til Justervesenet. Import av e-merkede varer pakket utenfor EU/E\u00d8S-omr\u00e5det er ulovlig uten godkjenning fra Justervesenet. Ved e-merking i et annet EU-/E\u00d8S-land er ikke godkjenning fra Justervesenet n\u00f8dvendig.<br><br>E-merket er en viktig indikator for forbrukerne, da det garanterer at ferdigpakningene oppfyller kravene til nettoinnhold. Dette sikrer riktig mengde i produktene og forhindrer feilinformasjon. Ved \u00e5 bruke e-merket viser bedrifter at de leverer kvalitetsprodukter og f\u00f8lger regelverket for nettoinnhold i ferdigpakninger.</div>",
+                    "note": null,
+                    "icon": {
+                        "svg": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/svg/E-Merket.svg",
+                        "png": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/png/E-Merket.png"
+                    }
+                },
+                {
+                    "name": "euroleaf",
+                    "display_name": "EuroLeaf",
+                    "description": "Euroleaf-logoen er et offisielt merke for \u00f8kologiske produkter som oppfyller EU-standardene for \u00f8kologisk produksjon og merking.",
+                    "organization": "Den europeiske union (EU)",
+                    "alternative_names": null,
+                    "type": null,
+                    "year_established": 2010,
+                    "about": null,
+                    "note": null,
+                    "icon": {
+                        "svg": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/svg/Euroleaf.svg",
+                        "png": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/png/Euroleaf.png"
+                    }
+                }
+            ],
+            "created_at": "2022-01-09T19:28:49.000000Z",
+            "updated_at": "2024-04-25T07:00:47.000000Z"
+        },
+        {
+            "id": 3,
+            "name": "Libero Up&Go Str.7 16stk",
+            "brand": "Libero",
+            "vendor": "Essity norway as dagligvare",
+            "ean": "7322541090931",
+            "url": "https://joker.no/nettbutikk/varer/barneprodukter/bleier/libero-upgo-7322541090931",
+            "image": "https://bilder.ngdata.no/7322541090931/kmh/large.jpg",
+            "category": [
+                {
+                    "id": 16,
+                    "depth": -1,
+                    "name": "Barneprodukter"
+                },
+                {
+                    "id": 730,
+                    "depth": 0,
+                    "name": "Bleier"
+                }
+            ],
+            "description": "Den mest fleksible buksebleien for aktive barn som veier 16\u201326 kg. Bleien best\u00e5r av sk\u00e5nsomme, pustende materialer og en tynn kjerne med kanaler som gir barnet full bevegelsesfrihet. Den er dermatologisk testet, lotionfri og er anbefalt av Norges Astma- og Allergiforbund. Bleien er ogs\u00e5 sertifisert av FSC og Svanemerket.",
+            "ingredients": null,
+            "current_price": 81.9,
+            "current_unit_price": 5.12,
+            "weight": 16,
+            "weight_unit": "piece",
+            "store": {
+                "name": "Joker",
+                "code": "JOKER_NO",
+                "url": "https://joker.no/nettbutikk/varer",
+                "logo": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/logos/Joker.svg"
+            },
+            "price_history": [
+                {
+                    "price": 81.9,
+                    "date": "2024-04-25T07:00:47.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-23T07:00:57.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-22T07:00:54.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-21T07:00:44.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-20T07:00:52.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-19T07:00:52.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-18T07:00:56.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-17T07:00:58.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-16T07:00:51.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-15T07:01:04.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-14T07:00:54.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-13T07:00:59.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-12T07:01:07.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-11T07:00:55.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-10T07:00:56.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-09T07:01:00.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-08T07:00:53.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-07T07:01:01.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-06T07:00:50.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-05T07:00:52.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-04T07:00:52.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-03T07:00:56.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-02T07:00:49.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-04-01T07:00:56.000000Z"
+                },
+                {
+                    "price": 81.9,
+                    "date": "2024-03-31T07:00:45.000000Z"
+                }
+            ],
+            "allergens": [],
+            "nutrition": [],
+            "labels": [
+                {
+                    "name": "svanemerket",
+                    "display_name": "Svanemerket",
+                    "description": "Nordens offisielle milj\u00f8merke",
+                    "organization": "Milj\u00f8merking Norge",
+                    "alternative_names": null,
+                    "type": null,
+                    "year_established": 1990,
+                    "about": "<div>Svanemerket er det offisielle nordiske milj\u00f8merket etablert av Nordisk ministerr\u00e5d. Hensikten med Svanemerket er todelt: \u00c5 stimulere produsentene til \u00e5 lage milj\u00f8tilpassete varer og tjenester, og \u00e5 gj\u00f8re det enkelt for forbrukerne \u00e5 ta gode milj\u00f8valg. Merket er basert p\u00e5 strenge milj\u00f8krav som omfatter hele livsl\u00f8pet til produktet eller tjenesten, fra r\u00e5vare til produksjon, bruk og avfallsh\u00e5ndtering. Svanemerket stiller krav til energieffektivitet, materialvalg, kjemikaliebruk og holdbarhet for \u00e5 sikre at merkede produkter er blant de mest milj\u00f8tilpassede p\u00e5 markedet.<br><br></div><div><br>Svanemerket er frivillig og gir forbrukerne en p\u00e5litelig indikasjon p\u00e5 at varen eller tjenesten oppfyller strenge milj\u00f8krav. Merket er synlig som en logo som viser at produktet er Svanemerket. Kriteriene for \u00e5 f\u00e5 lisens til \u00e5 bruke Svanemerket er offentlig tilgjengelige, og Milj\u00f8merking kontrollerer og dokumenterer at alle krav er oppfylt. Merket finnes p\u00e5 et bredt spekter av produkter og tjenester, inkludert rengj\u00f8ringsmidler, m\u00f8bler, tekstiler, hudpleieprodukter og mer. Svanemerket har ogs\u00e5 utviklet krav til trykkerier, rengj\u00f8ringstjenester, restauranter og andre virksomheter.<br><br></div><div><br>Svanemerket er kjent for sin barnefigur Svanhild, som hjelper Blekkulf og vennene med \u00e5 l\u00f8se milj\u00f8problemer. Gjennom Svanemerket kan forbrukerne enkelt identifisere og velge produkter og tjenester som er blant de mest milj\u00f8vennlige p\u00e5 markedet. Merket er en p\u00e5litelig guide for \u00e5 ta milj\u00f8bevisste valg og bidrar til \u00e5 redusere milj\u00f8p\u00e5virkningen fra forbruksvarer og -tjenester.</div>",
+                    "note": null,
+                    "icon": {
+                        "svg": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/svg/Svanemerket.svg",
+                        "png": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/png/Svanemerket.png"
+                    }
+                },
+                {
+                    "name": "fsc",
+                    "display_name": "FSC",
+                    "description": "FSC-merket er et r\u00e5varemerke og omfatter b\u00e5de biologisk mangfold, b\u00e6rekraft og sosiale aspekter.",
+                    "organization": "Forest Stewardship Council\u00ae",
+                    "alternative_names": null,
+                    "type": "Sertifisering",
+                    "year_established": 1993,
+                    "about": "<div>FSC-merket, ogs\u00e5 kjent som Forest Stewardship Council-merket, er en internasjonal sertifiseringsordning for b\u00e6rekraftig skogbruk. Det sikrer at tre- og papirprodukter kommer fra skoger som forvaltes p\u00e5 en milj\u00f8vennlig, sosialt ansvarlig og \u00f8konomisk levedyktig m\u00e5te.<br><br>FSC fokuserer p\u00e5 b\u00e6rekraftig skogbruk ved \u00e5 opprettholde biologisk mangfold, beskytte truede arter og bevare \u00f8kosystemets integritet. Skoger som er FSC-merket, m\u00e5 ogs\u00e5 respektere urfolks og lokalsamfunns rettigheter, kulturelle verdier og arbeidstakeres rettigheter og sikkerhet.<br><br>FSC-merket har et sporbarhetssystem som sikrer at tre- og papirprodukter kan spores tilbake til FSC-sertifiserte skoger. Dette gir forbrukere trygghet om at produktene de kj\u00f8per ikke bidrar til avskoging eller \u00f8deleggelse av s\u00e5rbare skoger. Gjennom FSC-merket kan forbrukere ta informerte valg som st\u00f8tter skogbevaring og sosialt rettferdige praksiser, samtidig som det oppfordres til dialog og samarbeid mellom ulike interessenter for \u00e5 fremme ansvarlig skogbruk globalt.</div>",
+                    "note": null,
+                    "icon": {
+                        "svg": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/svg/FSC.svg",
+                        "png": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/png/FSC.png"
+                    }
+                },
+                {
+                    "name": "asthma_allergy_nordic",
+                    "display_name": "Asthma Allergy Nordic",
+                    "description": "Asthma Allergy Nordic-merket anbefaler produkter for astma, allergi og overf\u00f8lsomhet uten parfyme og un\u00f8dvendige kjemikalier.",
+                    "organization": null,
+                    "alternative_names": null,
+                    "type": "Sertifisering",
+                    "year_established": null,
+                    "about": "<div>Asthma Allergy Nordic er en produktmerkeordning som drives av astma- og allergiforbundene i Norge, Sverige og Danmark. Merket er en anerkjennelse som tildeles produkter som oppfyller strenge kriterier og er gunstige for personer med astma, allergi og andre overf\u00f8lsomhetssykdommer. Produktene som b\u00e6rer merket er helt uten parfyme og un\u00f8dvendige kjemikalier.<br><br>For \u00e5 bli anbefalt av Asthma Allergy Nordic gjennomg\u00e5r hvert produkt en grundig vurdering basert p\u00e5 utviklede kriterier og samarbeid med fagutvalg og eksperter. Merket tar sikte p\u00e5 \u00e5 unng\u00e5 plager for personer med astma, allergi eller overf\u00f8lsomhet, samtidig som det bidrar til \u00e5 skape helsevennlige produkter for alle.<br><br>N\u00e5r et produkt er merket med Asthma Allergy Nordic, gir det forbrukerne trygghet om at det er n\u00f8ye vurdert og anbefalt for personer med astma, allergi og overf\u00f8lsomhetssykdommer. Merkeordningen har som m\u00e5l \u00e5 gj\u00f8re det enklere for forbrukerne \u00e5 velge produkter som er sk\u00e5nsomme mot sensitiv hud og reduserer risikoen for allergiske reaksjoner.<br><br>Asthma Allergy Nordic er anerkjent som et p\u00e5litelig merke i over 70 land. Ved \u00e5 se etter merket kan forbrukere identifisere produkter som er anbefalt av astma- og allergiforbundene i Norge, Sverige og Danmark, og som oppfyller strenge kvalitets- og helsestandarder for personer med astma, allergi og overf\u00f8lsomhetssykdommer.</div>",
+                    "note": null,
+                    "icon": {
+                        "svg": null,
+                        "png": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/png/Asthma Allergy Nordic.png"
+                    }
+                },
+                {
+                    "name": "resin4",
+                    "display_name": "Lavdensitetspolyetylen (LDPE eller PE-LD)",
+                    "description": "Type plast brukt i fleksible gjenstander som poser og emballasje",
+                    "organization": "ASTM International",
+                    "alternative_names": null,
+                    "type": "Plastmerke",
+                    "year_established": null,
+                    "about": "LDPE eller PE-LD (lavdensitetspolyetylen eller line\u00e6r lavdensitetspolyetylen) brukes til \u00e5 lage plastposer, seks-pakke-ringer, ulike beholdere, dispenserbokser, vaskerflasker, r\u00f8r og ulikt formet laboratorieutstyr. LDPE blir sjelden resirkulert gjennom kommunale gjenvinningsprogrammer og er en betydelig kilde til plastforurensning. Likevel kan LDPE ofte returneres til mange butikker for gjenvinning.",
+                    "note": null,
+                    "icon": {
+                        "svg": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/svg/Resin4.svg",
+                        "png": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/png/Resin4.png"
+                    }
+                }
+            ],
+            "created_at": "2022-01-09T19:28:49.000000Z",
+            "updated_at": "2024-04-25T07:00:47.000000Z"
+        },
+        {
+            "id": 4,
+            "name": "V\u00e5tservietter 2x72stk First Price",
+            "brand": "First price",
+            "vendor": "Unil",
+            "ean": "7311041038673",
+            "url": "https://joker.no/nettbutikk/varer/barneprodukter/babypleie/vatservietter/vatservietter-7311041038673",
+            "image": "https://bilder.ngdata.no/7311041038673/kmh/large.jpg",
+            "category": [
+                {
+                    "id": 16,
+                    "depth": -2,
+                    "name": "Barneprodukter"
+                },
+                {
+                    "id": 17,
+                    "depth": -1,
+                    "name": "Babypleie"
+                },
+                {
+                    "id": 18,
+                    "depth": 0,
+                    "name": "V\u00e5tservietter"
+                }
+            ],
+            "description": "Milde og parfymefrie v\u00e5tservietter. Ideelle til bleiestell og vask av ansikt og hender. Dermatologisk testet og dokumentert egnet for sensitiv hud. ",
+            "ingredients": "Ingredients: \naqua, glycerin, sodium laureth-11 carboxylate, laureth-10, sodium benzoate, lactic acid, potassium sorbate.\n\nmilde og parfymefrie v\u00e5tservietter. ideelle til bleiestell og vask av ansikt og hender. dermatologisk testet og dokumentert egnet for sensitiv hud.",
+            "current_price": 33.9,
+            "current_unit_price": 0.24,
+            "weight": 144,
+            "weight_unit": "piece",
+            "store": {
+                "name": "Joker",
+                "code": "JOKER_NO",
+                "url": "https://joker.no/nettbutikk/varer",
+                "logo": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/logos/Joker.svg"
+            },
+            "price_history": [
+                {
+                    "price": 33.9,
+                    "date": "2024-04-25T07:00:43.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-23T07:01:12.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-22T07:01:17.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-21T07:01:08.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-20T07:01:06.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-19T07:00:52.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-18T07:01:11.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-17T07:01:08.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-16T07:01:11.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-15T07:01:15.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-14T07:01:07.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-13T07:01:15.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-12T07:01:20.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-11T07:01:08.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-10T07:01:17.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-09T07:01:06.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-08T07:00:58.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-07T07:01:07.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-06T07:00:54.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-05T07:00:57.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-04T07:00:57.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-03T07:00:56.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-02T07:00:46.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-04-01T07:00:52.000000Z"
+                },
+                {
+                    "price": 33.9,
+                    "date": "2024-03-31T07:00:41.000000Z"
+                }
+            ],
+            "allergens": [],
+            "nutrition": [],
+            "labels": [],
+            "created_at": "2022-01-09T19:28:49.000000Z",
+            "updated_at": "2024-04-25T07:00:43.000000Z"
+        },
+        {
+            "id": 5,
+            "name": "Smoothie Banan/Jordb\u00e6r 90g Lillego",
+            "brand": "Lillego",
+            "vendor": "Unil",
+            "ean": "7035620028328",
+            "url": "https://joker.no/nettbutikk/varer/barneprodukter/barnedessert/smoothie-7035620028328",
+            "image": "https://bilder.ngdata.no/7035620028328/kmh/large.jpg",
+            "category": [
+                {
+                    "id": 16,
+                    "depth": -1,
+                    "name": "Barneprodukter"
+                },
+                {
+                    "id": 25,
+                    "depth": 0,
+                    "name": "Barnedessert"
+                }
+            ],
+            "description": "LilleGo' smoothie med banan og jordb\u00e6r. Produktet er laget av \u00f8kologiske r\u00e5varer og passer for barn over seks m\u00e5neder.",
+            "ingredients": "Banan 37 %, eple 36 %, jordb\u00e6r 23 % og druejuice.",
+            "current_price": 13.9,
+            "current_unit_price": 154.44,
+            "weight": 90,
+            "weight_unit": "g",
+            "store": {
+                "name": "Joker",
+                "code": "JOKER_NO",
+                "url": "https://joker.no/nettbutikk/varer",
+                "logo": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/logos/Joker.svg"
+            },
+            "price_history": [
+                {
+                    "price": 13.9,
+                    "date": "2024-04-25T07:00:50.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-23T07:00:52.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-22T07:00:49.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-21T07:00:40.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-20T07:00:45.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-19T07:00:45.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-18T07:00:51.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-17T07:00:53.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-16T07:00:46.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-15T07:00:57.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-14T07:00:48.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-13T07:00:50.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-12T07:00:56.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-11T07:00:47.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-10T07:00:50.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-09T07:00:53.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-08T07:00:47.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-07T07:00:56.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-06T07:00:49.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-05T07:00:52.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-04T07:00:51.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-03T07:00:47.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-02T07:00:42.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-01T23:13:36.000000Z"
+                },
+                {
+                    "price": 13.9,
+                    "date": "2024-04-01T07:00:47.000000Z"
+                }
+            ],
+            "allergens": [
+                {
+                    "code": "blotdyr",
+                    "display_name": "Bl\u00f8tdyr",
+                    "contains": "NO"
+                },
+                {
+                    "code": "egg",
+                    "display_name": "Egg",
+                    "contains": "NO"
+                },
+                {
+                    "code": "fisk",
+                    "display_name": "Fisk",
+                    "contains": "NO"
+                },
+                {
+                    "code": "gluten",
+                    "display_name": "Gluten",
+                    "contains": "NO"
+                },
+                {
+                    "code": "lupiner",
+                    "display_name": "Lupiner",
+                    "contains": "NO"
+                },
+                {
+                    "code": "melk",
+                    "display_name": "Melk",
+                    "contains": "NO"
+                },
+                {
+                    "code": "notter",
+                    "display_name": "N\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "peanotter",
+                    "display_name": "Pean\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "selleri",
+                    "display_name": "Selleri",
+                    "contains": "NO"
+                },
+                {
+                    "code": "sennep",
+                    "display_name": "Sennep",
+                    "contains": "NO"
+                },
+                {
+                    "code": "sesam",
+                    "display_name": "Sesam",
+                    "contains": "NO"
+                },
+                {
+                    "code": "skalldyr",
+                    "display_name": "Skalldyr",
+                    "contains": "NO"
+                },
+                {
+                    "code": "soya",
+                    "display_name": "Soya",
+                    "contains": "NO"
+                },
+                {
+                    "code": "sulfitt",
+                    "display_name": "Sulfitt",
+                    "contains": "NO"
+                }
+            ],
+            "nutrition": [
+                {
+                    "code": "energi_kcal",
+                    "display_name": "Kalorier",
+                    "amount": 64,
+                    "unit": "kcal"
+                },
+                {
+                    "code": "energi_kj",
+                    "display_name": "Energi",
+                    "amount": 270,
+                    "unit": "kj"
+                },
+                {
+                    "code": "fett_totalt",
+                    "display_name": "Fett",
+                    "amount": 0.2,
+                    "unit": "g"
+                },
+                {
+                    "code": "karbohydrater",
+                    "display_name": "Karbohydrater",
+                    "amount": 14.1,
+                    "unit": "g"
+                },
+                {
+                    "code": "kostfiber",
+                    "display_name": "Kostfiber",
+                    "amount": 1.6,
+                    "unit": "g"
+                },
+                {
+                    "code": "mettet_fett",
+                    "display_name": "Mettet fett",
+                    "amount": 0,
+                    "unit": "g"
+                },
+                {
+                    "code": "polyoler",
+                    "display_name": "Sukkeralkoholer",
+                    "amount": 0,
+                    "unit": "g"
+                },
+                {
+                    "code": "protein",
+                    "display_name": "Protein",
+                    "amount": 0.6,
+                    "unit": "g"
+                },
+                {
+                    "code": "salt",
+                    "display_name": "Salt",
+                    "amount": 0,
+                    "unit": "g"
+                },
+                {
+                    "code": "stivelse",
+                    "display_name": "Stivelse",
+                    "amount": 0.7,
+                    "unit": "g"
+                },
+                {
+                    "code": "sukkerarter",
+                    "display_name": "Sukkerarter",
+                    "amount": 13.4,
+                    "unit": "g"
+                }
+            ],
+            "labels": [
+                {
+                    "name": "debio",
+                    "display_name": "Debio",
+                    "description": "Debio-merket er det offisielle norske \u00f8kologimerket og gir en garanti for at en vare er \u00f8kologisk dyrket.",
+                    "organization": null,
+                    "alternative_names": null,
+                    "type": null,
+                    "year_established": null,
+                    "about": "<div>Debio-merket er det offisielle norske merket for \u00f8kologiske produkter. Det gir en garanti for at varen er dyrket og produsert i samsvar med \u00f8kologiske prinsipper. Som en privat medlemsorganisasjon, kontrollerer og merker Debio \u00f8kologisk landbruksproduksjon, foredling, lagring, import og omsetning i Norge. Organisasjonen har utviklet egne regler og standarder som f\u00f8lges for \u00e5 oppn\u00e5 Debio-sertifisering.<br><br></div><div>For \u00e5 bli merket som \u00f8kologisk av Debio, m\u00e5 produkter gjennomg\u00e5 inspeksjoner og oppfylle strenge krav hvert \u00e5r. Debio samarbeider tett med Mattilsynet for \u00e5 sikre at \u00f8kologisk produksjon og merking f\u00f8lger forskriftene om \u00f8kologisk produksjon og merking av \u00f8kologiske landbruksprodukter. Dette sikrer at forbrukerne kan stole p\u00e5 at Debio-merket indikerer ekte \u00f8kologiske produkter.<br><br></div><div>Debio-merket er et p\u00e5litelig symbol for forbrukere som \u00f8nsker \u00e5 velge \u00f8kologiske alternativer og st\u00f8tte en b\u00e6rekraftig matproduksjon i Norge. Ved \u00e5 se etter Debio-merket, kan forbrukere enkelt identifisere og kj\u00f8pe produkter som er i tr\u00e5d med deres \u00f8nske om \u00e5 spise \u00f8kologisk.</div>",
+                    "note": null,
+                    "icon": {
+                        "svg": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/svg/Debio.svg",
+                        "png": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/png/Debio.png"
+                    }
+                }
+            ],
+            "created_at": "2022-01-09T19:28:49.000000Z",
+            "updated_at": "2024-04-25T07:00:50.000000Z"
+        },
+        {
+            "id": 6,
+            "name": "V\u00e5tservietter 64stk Lillego",
+            "brand": "Lillego",
+            "vendor": "Unil",
+            "ean": "7035620025037",
+            "url": "https://joker.no/nettbutikk/varer/barneprodukter/babypleie/vatservietter/vatservietter-7035620025037",
+            "image": "https://bilder.ngdata.no/7035620025037/kmh/large.jpg",
+            "category": [
+                {
+                    "id": 16,
+                    "depth": -2,
+                    "name": "Barneprodukter"
+                },
+                {
+                    "id": 17,
+                    "depth": -1,
+                    "name": "Babypleie"
+                },
+                {
+                    "id": 18,
+                    "depth": 0,
+                    "name": "V\u00e5tservietter"
+                }
+            ],
+            "description": "LilleGo\u2019 sensitive v\u00e5tservietter er milde og parfymefrie. Ideelle til bleiestell, samt vask av ansikt og hender. V\u00e5tserviettene er dermatologisk testet og dokumentert egnet for sensitiv hud.",
+            "ingredients": "Ingredients: \naqua, glycerin, sodium laureth-11 carboxylate, laureth-10, sodium benzoate, lactic acid, potassium sorbate.\n\n",
+            "current_price": 27.9,
+            "current_unit_price": 0.44,
+            "weight": 64,
+            "weight_unit": "piece",
+            "store": {
+                "name": "Joker",
+                "code": "JOKER_NO",
+                "url": "https://joker.no/nettbutikk/varer",
+                "logo": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/logos/Joker.svg"
+            },
+            "price_history": [
+                {
+                    "price": 27.9,
+                    "date": "2024-04-25T07:00:42.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-23T07:00:45.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-22T07:00:42.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-21T07:00:36.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-20T07:00:41.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-19T07:00:41.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-18T07:00:47.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-17T07:00:49.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-16T07:00:43.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-15T07:00:53.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-14T07:00:45.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-13T07:00:49.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-12T07:00:56.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-11T07:00:46.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-10T07:00:49.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-09T07:00:51.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-08T07:00:45.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-07T07:00:55.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-06T07:00:48.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-05T07:00:51.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-04T07:00:50.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-03T07:00:46.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-02T07:00:41.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-04-01T07:00:47.000000Z"
+                },
+                {
+                    "price": 27.9,
+                    "date": "2024-03-31T07:00:37.000000Z"
+                }
+            ],
+            "allergens": [],
+            "nutrition": [],
+            "labels": [],
+            "created_at": "2022-01-09T19:28:49.000000Z",
+            "updated_at": "2024-04-25T07:00:42.000000Z"
+        },
+        {
+            "id": 7,
+            "name": "Jordb\u00e6r&Eple \u00d8kol 4mnd 120g Ellas",
+            "brand": "Ellas",
+            "vendor": "Jensen & co as",
+            "ean": "5060107330368",
+            "url": "https://joker.no/nettbutikk/varer/barneprodukter/barnedessert/jordbaereple-5060107330368",
+            "image": "https://bilder.ngdata.no/5060107330368/kmh/large.jpg",
+            "category": [
+                {
+                    "id": 16,
+                    "depth": -1,
+                    "name": "Barneprodukter"
+                },
+                {
+                    "id": 25,
+                    "depth": 0,
+                    "name": "Barnedessert"
+                }
+            ],
+            "description": "Fruktpur\u00e9 av kun \u00f8kologiske friske jordb\u00e6r + eple av beste kvalitet i 120grams praktisk klemmepose. Passer for de minste fra 4mnd opp til 4 \u00e5r. Perfekt som tilvenning til fast f\u00f8de eller som et lite mellomm\u00e5ltid.",
+            "ingredients": "79% most eple, 21% most jordb\u00e6r, konsentrert sitronsaft.",
+            "current_price": 37.9,
+            "current_unit_price": 315.83,
+            "weight": 120,
+            "weight_unit": "g",
+            "store": {
+                "name": "Joker",
+                "code": "JOKER_NO",
+                "url": "https://joker.no/nettbutikk/varer",
+                "logo": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/logos/Joker.svg"
+            },
+            "price_history": [
+                {
+                    "price": 37.9,
+                    "date": "2024-04-25T07:00:55.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-23T07:01:06.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-22T07:01:12.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-21T07:01:00.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-20T07:01:01.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-19T07:01:08.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-18T07:01:03.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-17T07:01:05.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-16T07:01:07.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-15T07:01:09.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-14T07:01:00.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-13T07:01:08.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-12T07:01:12.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-11T07:01:06.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-10T07:01:11.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-09T07:01:06.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-08T07:01:01.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-07T07:01:14.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-06T07:01:16.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-05T07:01:29.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-04T07:01:09.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-03T07:01:01.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-02T07:01:13.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-04-01T07:01:17.000000Z"
+                },
+                {
+                    "price": 37.9,
+                    "date": "2024-03-31T07:01:02.000000Z"
+                }
+            ],
+            "allergens": [
+                {
+                    "code": "blotdyr",
+                    "display_name": "Bl\u00f8tdyr",
+                    "contains": "NO"
+                },
+                {
+                    "code": "egg",
+                    "display_name": "Egg",
+                    "contains": "NO"
+                },
+                {
+                    "code": "fisk",
+                    "display_name": "Fisk",
+                    "contains": "NO"
+                },
+                {
+                    "code": "gluten",
+                    "display_name": "Gluten",
+                    "contains": "NO"
+                },
+                {
+                    "code": "lupiner",
+                    "display_name": "Lupiner",
+                    "contains": "NO"
+                },
+                {
+                    "code": "melk",
+                    "display_name": "Melk",
+                    "contains": "NO"
+                },
+                {
+                    "code": "notter",
+                    "display_name": "N\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "peanotter",
+                    "display_name": "Pean\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "selleri",
+                    "display_name": "Selleri",
+                    "contains": "NO"
+                },
+                {
+                    "code": "sennep",
+                    "display_name": "Sennep",
+                    "contains": "NO"
+                },
+                {
+                    "code": "sesam",
+                    "display_name": "Sesam",
+                    "contains": "NO"
+                },
+                {
+                    "code": "skalldyr",
+                    "display_name": "Skalldyr",
+                    "contains": "NO"
+                },
+                {
+                    "code": "soya",
+                    "display_name": "Soya",
+                    "contains": "NO"
+                },
+                {
+                    "code": "sulfitt",
+                    "display_name": "Sulfitt",
+                    "contains": "NO"
+                },
+                {
+                    "code": "cashewnott",
+                    "display_name": "Cashewn\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "hasselnott",
+                    "display_name": "Hasseln\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "macadamianott",
+                    "display_name": "Macademiann\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "mandel",
+                    "display_name": "Mandler",
+                    "contains": "NO"
+                },
+                {
+                    "code": "paranott",
+                    "display_name": "Paran\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "pekannott",
+                    "display_name": "Pekann\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "pistasjnott",
+                    "display_name": "Pistasjn\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "valnott",
+                    "display_name": "Valn\u00f8tter",
+                    "contains": "NO"
+                }
+            ],
+            "nutrition": [
+                {
+                    "code": "energi_kcal",
+                    "display_name": "Kalorier",
+                    "amount": 46,
+                    "unit": "kcal"
+                },
+                {
+                    "code": "energi_kj",
+                    "display_name": "Energi",
+                    "amount": 196,
+                    "unit": "kj"
+                },
+                {
+                    "code": "fett_totalt",
+                    "display_name": "Fett",
+                    "amount": 0.1,
+                    "unit": "g"
+                },
+                {
+                    "code": "karbohydrater",
+                    "display_name": "Karbohydrater",
+                    "amount": 10.1,
+                    "unit": "g"
+                },
+                {
+                    "code": "mettet_fett",
+                    "display_name": "Mettet fett",
+                    "amount": 0.1,
+                    "unit": "g"
+                },
+                {
+                    "code": "protein",
+                    "display_name": "Protein",
+                    "amount": 0.2,
+                    "unit": "g"
+                },
+                {
+                    "code": "salt",
+                    "display_name": "Salt",
+                    "amount": 0.03,
+                    "unit": "g"
+                },
+                {
+                    "code": "sukkerarter",
+                    "display_name": "Sukkerarter",
+                    "amount": 10.1,
+                    "unit": "g"
+                }
+            ],
+            "labels": [
+                {
+                    "name": "e_merket",
+                    "display_name": "e-merket",
+                    "description": "E-merket er en valgfri merkeordning for ferdigpakninger i EU/E\u00d8S-land, som sikrer korrekt nettoinnhold. Det gir forbrukerne trygghet og tillit til produktene de kj\u00f8per.",
+                    "organization": null,
+                    "alternative_names": null,
+                    "type": null,
+                    "year_established": 2008,
+                    "about": "<div>\u212e-tegnet, ogs\u00e5 kjent som e-merket eller e-symbolet, er en valgfri merkeordning for ferdigpakninger som eksporteres mellom EU/E\u00d8S-land, inkludert Norge. Regelverket for e-merket er basert p\u00e5 <a href=\"https://eur-lex.europa.eu/legal-content/EN/LSU/?uri=celex:31976L0211\">EU-direktiv 76/211/EEC</a> og implementeres i Norge gjennom E\u00d8S-avtalen og <a href=\"https://lovdata.no/dokument/LTI/forskrift/2007-12-21-1730\">forskriften om krav til nettoinnhold i ferdigpakninger</a>. \u212e-tegnet st\u00e5r for \"quantit\u00e9 estim\u00e9e\" (fransk for \"antatt mengde\").<br><br>Form\u00e5let med e-merket er \u00e5 sikre at ferdigpakninger inneholder minst like mye som angitt p\u00e5 pakken. Merket brukes p\u00e5 produkter fylt til forh\u00e5ndsbestemte vektklasser eller volum, fra 5 gram/5 ml til 10 kg/10 l. Grenser er fastsatt for tillatt avvik fra oppgitt innhold i hver pakning.<br><br>Bedrifter kan velge \u00e5 bruke e-merket, men m\u00e5 f\u00f8lge forskriften og melde fra til Justervesenet. Import av e-merkede varer pakket utenfor EU/E\u00d8S-omr\u00e5det er ulovlig uten godkjenning fra Justervesenet. Ved e-merking i et annet EU-/E\u00d8S-land er ikke godkjenning fra Justervesenet n\u00f8dvendig.<br><br>E-merket er en viktig indikator for forbrukerne, da det garanterer at ferdigpakningene oppfyller kravene til nettoinnhold. Dette sikrer riktig mengde i produktene og forhindrer feilinformasjon. Ved \u00e5 bruke e-merket viser bedrifter at de leverer kvalitetsprodukter og f\u00f8lger regelverket for nettoinnhold i ferdigpakninger.</div>",
+                    "note": null,
+                    "icon": {
+                        "svg": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/svg/E-Merket.svg",
+                        "png": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/png/E-Merket.png"
+                    }
+                },
+                {
+                    "name": "euroleaf",
+                    "display_name": "EuroLeaf",
+                    "description": "Euroleaf-logoen er et offisielt merke for \u00f8kologiske produkter som oppfyller EU-standardene for \u00f8kologisk produksjon og merking.",
+                    "organization": "Den europeiske union (EU)",
+                    "alternative_names": null,
+                    "type": null,
+                    "year_established": 2010,
+                    "about": null,
+                    "note": null,
+                    "icon": {
+                        "svg": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/svg/Euroleaf.svg",
+                        "png": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/png/Euroleaf.png"
+                    }
+                }
+            ],
+            "created_at": "2022-01-09T19:28:49.000000Z",
+            "updated_at": "2024-04-25T07:00:55.000000Z"
+        },
+        {
+            "id": 8,
+            "name": "Smoothie Banan/Jordb\u00e6r 90g Lillego",
+            "brand": "Lillego",
+            "vendor": "Unil",
+            "ean": "7035620028328",
+            "url": "https://spar.no/nettbutikk/varer/barn/barnedessert/smoothie-7035620028328",
+            "image": "https://bilder.ngdata.no/7035620028328/kmh/large.jpg",
+            "category": [
+                {
+                    "id": 16,
+                    "depth": -1,
+                    "name": "Barneprodukter"
+                },
+                {
+                    "id": 25,
+                    "depth": 0,
+                    "name": "Barnedessert"
+                }
+            ],
+            "description": "LilleGo' smoothie med banan og jordb\u00e6r. Produktet er laget av \u00f8kologiske r\u00e5varer og passer for barn over seks m\u00e5neder.",
+            "ingredients": "Banan 37 %, eple 36 %, jordb\u00e6r 23 % og druejuice.",
+            "current_price": 13.5,
+            "current_unit_price": 150,
+            "weight": 90,
+            "weight_unit": "g",
+            "store": {
+                "name": "SPAR",
+                "code": "SPAR_NO",
+                "url": "https://spar.no/nettbutikk/varer",
+                "logo": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/logos/Spar.svg"
+            },
+            "price_history": [
+                {
+                    "price": 13.5,
+                    "date": "2024-04-25T07:06:16.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-25T07:03:41.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-25T07:01:06.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-23T07:06:46.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-23T07:03:44.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-23T07:01:08.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-22T07:06:13.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-22T07:03:40.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-22T07:01:04.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-21T07:05:37.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-21T07:03:25.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-21T07:00:55.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-20T07:06:13.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-20T07:04:01.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-20T07:00:57.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-19T07:06:29.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-19T07:03:44.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-19T07:00:57.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-18T07:06:22.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-18T07:03:51.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-18T07:01:01.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-17T07:06:24.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-17T07:03:54.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-17T07:01:10.000000Z"
+                },
+                {
+                    "price": 13.5,
+                    "date": "2024-04-16T07:10:08.000000Z"
+                }
+            ],
+            "allergens": [
+                {
+                    "code": "blotdyr",
+                    "display_name": "Bl\u00f8tdyr",
+                    "contains": "NO"
+                },
+                {
+                    "code": "egg",
+                    "display_name": "Egg",
+                    "contains": "NO"
+                },
+                {
+                    "code": "fisk",
+                    "display_name": "Fisk",
+                    "contains": "NO"
+                },
+                {
+                    "code": "gluten",
+                    "display_name": "Gluten",
+                    "contains": "NO"
+                },
+                {
+                    "code": "lupiner",
+                    "display_name": "Lupiner",
+                    "contains": "NO"
+                },
+                {
+                    "code": "melk",
+                    "display_name": "Melk",
+                    "contains": "NO"
+                },
+                {
+                    "code": "notter",
+                    "display_name": "N\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "peanotter",
+                    "display_name": "Pean\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "selleri",
+                    "display_name": "Selleri",
+                    "contains": "NO"
+                },
+                {
+                    "code": "sennep",
+                    "display_name": "Sennep",
+                    "contains": "NO"
+                },
+                {
+                    "code": "sesam",
+                    "display_name": "Sesam",
+                    "contains": "NO"
+                },
+                {
+                    "code": "skalldyr",
+                    "display_name": "Skalldyr",
+                    "contains": "NO"
+                },
+                {
+                    "code": "soya",
+                    "display_name": "Soya",
+                    "contains": "NO"
+                },
+                {
+                    "code": "sulfitt",
+                    "display_name": "Sulfitt",
+                    "contains": "NO"
+                }
+            ],
+            "nutrition": [
+                {
+                    "code": "energi_kcal",
+                    "display_name": "Kalorier",
+                    "amount": 64,
+                    "unit": "kcal"
+                },
+                {
+                    "code": "energi_kj",
+                    "display_name": "Energi",
+                    "amount": 270,
+                    "unit": "kj"
+                },
+                {
+                    "code": "fett_totalt",
+                    "display_name": "Fett",
+                    "amount": 0.2,
+                    "unit": "g"
+                },
+                {
+                    "code": "karbohydrater",
+                    "display_name": "Karbohydrater",
+                    "amount": 14.1,
+                    "unit": "g"
+                },
+                {
+                    "code": "kostfiber",
+                    "display_name": "Kostfiber",
+                    "amount": 1.6,
+                    "unit": "g"
+                },
+                {
+                    "code": "mettet_fett",
+                    "display_name": "Mettet fett",
+                    "amount": 0,
+                    "unit": "g"
+                },
+                {
+                    "code": "polyoler",
+                    "display_name": "Sukkeralkoholer",
+                    "amount": 0,
+                    "unit": "g"
+                },
+                {
+                    "code": "protein",
+                    "display_name": "Protein",
+                    "amount": 0.6,
+                    "unit": "g"
+                },
+                {
+                    "code": "salt",
+                    "display_name": "Salt",
+                    "amount": 0,
+                    "unit": "g"
+                },
+                {
+                    "code": "stivelse",
+                    "display_name": "Stivelse",
+                    "amount": 0.7,
+                    "unit": "g"
+                },
+                {
+                    "code": "sukkerarter",
+                    "display_name": "Sukkerarter",
+                    "amount": 13.4,
+                    "unit": "g"
+                }
+            ],
+            "labels": [
+                {
+                    "name": "debio",
+                    "display_name": "Debio",
+                    "description": "Debio-merket er det offisielle norske \u00f8kologimerket og gir en garanti for at en vare er \u00f8kologisk dyrket.",
+                    "organization": null,
+                    "alternative_names": null,
+                    "type": null,
+                    "year_established": null,
+                    "about": "<div>Debio-merket er det offisielle norske merket for \u00f8kologiske produkter. Det gir en garanti for at varen er dyrket og produsert i samsvar med \u00f8kologiske prinsipper. Som en privat medlemsorganisasjon, kontrollerer og merker Debio \u00f8kologisk landbruksproduksjon, foredling, lagring, import og omsetning i Norge. Organisasjonen har utviklet egne regler og standarder som f\u00f8lges for \u00e5 oppn\u00e5 Debio-sertifisering.<br><br></div><div>For \u00e5 bli merket som \u00f8kologisk av Debio, m\u00e5 produkter gjennomg\u00e5 inspeksjoner og oppfylle strenge krav hvert \u00e5r. Debio samarbeider tett med Mattilsynet for \u00e5 sikre at \u00f8kologisk produksjon og merking f\u00f8lger forskriftene om \u00f8kologisk produksjon og merking av \u00f8kologiske landbruksprodukter. Dette sikrer at forbrukerne kan stole p\u00e5 at Debio-merket indikerer ekte \u00f8kologiske produkter.<br><br></div><div>Debio-merket er et p\u00e5litelig symbol for forbrukere som \u00f8nsker \u00e5 velge \u00f8kologiske alternativer og st\u00f8tte en b\u00e6rekraftig matproduksjon i Norge. Ved \u00e5 se etter Debio-merket, kan forbrukere enkelt identifisere og kj\u00f8pe produkter som er i tr\u00e5d med deres \u00f8nske om \u00e5 spise \u00f8kologisk.</div>",
+                    "note": null,
+                    "icon": {
+                        "svg": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/svg/Debio.svg",
+                        "png": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/png/Debio.png"
+                    }
+                }
+            ],
+            "created_at": "2022-01-09T19:28:49.000000Z",
+            "updated_at": "2024-04-25T07:06:16.000000Z"
+        },
+        {
+            "id": 9,
+            "name": "Smoothie R\u00f8d \u00d8kol 6mnd 90g Ellas",
+            "brand": "Ellas",
+            "vendor": "Jensen & co as",
+            "ean": "5060107338036",
+            "url": "https://joker.no/nettbutikk/varer/barneprodukter/barnedessert/smoothie-rod-5060107338036",
+            "image": "https://bilder.ngdata.no/5060107338036/kmh/large.jpg",
+            "category": [
+                {
+                    "id": 16,
+                    "depth": -1,
+                    "name": "Barneprodukter"
+                },
+                {
+                    "id": 25,
+                    "depth": 0,
+                    "name": "Barnedessert"
+                }
+            ],
+            "description": "Den r\u00f8de er en \u00f8kologisk fruktsmoothie av epler, bananer, jordb\u00e6r, vannmelonjuice, bringeb\u00e6r + en skvett sitronsaft. Jeg er en fruktmos av 100% frukt, uten ekstra tilsetninger - ikke en gang vann! Jeg passer for barn fra 6 m\u00e5neder og oppover.",
+            "ingredients": "39% \u00f8kologiske epler, 32% \u00f8kologiske bananer, 20% \u00f8kologiske jordb\u00e6r, 5% \u00f8kologisk vannmelonjuice, 4% \u00f8kologiske bringeb\u00e6r , <1% \u00f8kologisk sitronjuicekonsentrat",
+            "current_price": 19.9,
+            "current_unit_price": 221.11,
+            "weight": 90,
+            "weight_unit": "g",
+            "store": {
+                "name": "Joker",
+                "code": "JOKER_NO",
+                "url": "https://joker.no/nettbutikk/varer",
+                "logo": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/logos/Joker.svg"
+            },
+            "price_history": [
+                {
+                    "price": 19.9,
+                    "date": "2024-04-25T07:01:08.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-23T07:01:00.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-22T07:01:05.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-21T07:00:52.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-20T07:00:53.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-19T07:01:01.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-18T07:01:03.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-17T07:01:18.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-16T07:01:01.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-15T07:01:09.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-14T07:01:00.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-13T07:01:03.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-12T07:01:13.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-11T07:01:11.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-10T07:01:03.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-09T07:01:21.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-08T07:01:13.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-07T07:01:17.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-06T07:00:59.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-05T07:01:03.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-04T07:01:02.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-03T07:00:59.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-02T07:00:52.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-01T07:00:58.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-03-31T07:00:46.000000Z"
+                }
+            ],
+            "allergens": [
+                {
+                    "code": "blotdyr",
+                    "display_name": "Bl\u00f8tdyr",
+                    "contains": "NO"
+                },
+                {
+                    "code": "egg",
+                    "display_name": "Egg",
+                    "contains": "NO"
+                },
+                {
+                    "code": "fisk",
+                    "display_name": "Fisk",
+                    "contains": "NO"
+                },
+                {
+                    "code": "gluten",
+                    "display_name": "Gluten",
+                    "contains": "NO"
+                },
+                {
+                    "code": "lupiner",
+                    "display_name": "Lupiner",
+                    "contains": "NO"
+                },
+                {
+                    "code": "melk",
+                    "display_name": "Melk",
+                    "contains": "NO"
+                },
+                {
+                    "code": "notter",
+                    "display_name": "N\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "peanotter",
+                    "display_name": "Pean\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "selleri",
+                    "display_name": "Selleri",
+                    "contains": "NO"
+                },
+                {
+                    "code": "sennep",
+                    "display_name": "Sennep",
+                    "contains": "NO"
+                },
+                {
+                    "code": "sesam",
+                    "display_name": "Sesam",
+                    "contains": "NO"
+                },
+                {
+                    "code": "skalldyr",
+                    "display_name": "Skalldyr",
+                    "contains": "NO"
+                },
+                {
+                    "code": "soya",
+                    "display_name": "Soya",
+                    "contains": "NO"
+                },
+                {
+                    "code": "sulfitt",
+                    "display_name": "Sulfitt",
+                    "contains": "NO"
+                },
+                {
+                    "code": "cashewnott",
+                    "display_name": "Cashewn\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "hasselnott",
+                    "display_name": "Hasseln\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "macadamianott",
+                    "display_name": "Macademiann\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "mandel",
+                    "display_name": "Mandler",
+                    "contains": "NO"
+                },
+                {
+                    "code": "paranott",
+                    "display_name": "Paran\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "pekannott",
+                    "display_name": "Pekann\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "pistasjnott",
+                    "display_name": "Pistasjn\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "valnott",
+                    "display_name": "Valn\u00f8tter",
+                    "contains": "NO"
+                }
+            ],
+            "nutrition": [
+                {
+                    "code": "energi_kcal",
+                    "display_name": "Kalorier",
+                    "amount": 59,
+                    "unit": "kcal"
+                },
+                {
+                    "code": "energi_kj",
+                    "display_name": "Energi",
+                    "amount": 250,
+                    "unit": "kj"
+                },
+                {
+                    "code": "enumettet_fett",
+                    "display_name": "Enumettet fett",
+                    "amount": 0,
+                    "unit": "g"
+                },
+                {
+                    "code": "fett_totalt",
+                    "display_name": "Fett",
+                    "amount": 0.5,
+                    "unit": "g"
+                },
+                {
+                    "code": "flerumettet_fett",
+                    "display_name": "Flerumettet fett",
+                    "amount": 0,
+                    "unit": "g"
+                },
+                {
+                    "code": "karbohydrater",
+                    "display_name": "Karbohydrater",
+                    "amount": 12.5,
+                    "unit": "g"
+                },
+                {
+                    "code": "kostfiber",
+                    "display_name": "Kostfiber",
+                    "amount": 2.1,
+                    "unit": "g"
+                },
+                {
+                    "code": "mettet_fett",
+                    "display_name": "Mettet fett",
+                    "amount": 0.1,
+                    "unit": "g"
+                },
+                {
+                    "code": "protein",
+                    "display_name": "Protein",
+                    "amount": 0.7,
+                    "unit": "g"
+                },
+                {
+                    "code": "salt",
+                    "display_name": "Salt",
+                    "amount": 0.03,
+                    "unit": "g"
+                },
+                {
+                    "code": "sukkerarter",
+                    "display_name": "Sukkerarter",
+                    "amount": 11.2,
+                    "unit": "g"
+                }
+            ],
+            "labels": [
+                {
+                    "name": "debio",
+                    "display_name": "Debio",
+                    "description": "Debio-merket er det offisielle norske \u00f8kologimerket og gir en garanti for at en vare er \u00f8kologisk dyrket.",
+                    "organization": null,
+                    "alternative_names": null,
+                    "type": null,
+                    "year_established": null,
+                    "about": "<div>Debio-merket er det offisielle norske merket for \u00f8kologiske produkter. Det gir en garanti for at varen er dyrket og produsert i samsvar med \u00f8kologiske prinsipper. Som en privat medlemsorganisasjon, kontrollerer og merker Debio \u00f8kologisk landbruksproduksjon, foredling, lagring, import og omsetning i Norge. Organisasjonen har utviklet egne regler og standarder som f\u00f8lges for \u00e5 oppn\u00e5 Debio-sertifisering.<br><br></div><div>For \u00e5 bli merket som \u00f8kologisk av Debio, m\u00e5 produkter gjennomg\u00e5 inspeksjoner og oppfylle strenge krav hvert \u00e5r. Debio samarbeider tett med Mattilsynet for \u00e5 sikre at \u00f8kologisk produksjon og merking f\u00f8lger forskriftene om \u00f8kologisk produksjon og merking av \u00f8kologiske landbruksprodukter. Dette sikrer at forbrukerne kan stole p\u00e5 at Debio-merket indikerer ekte \u00f8kologiske produkter.<br><br></div><div>Debio-merket er et p\u00e5litelig symbol for forbrukere som \u00f8nsker \u00e5 velge \u00f8kologiske alternativer og st\u00f8tte en b\u00e6rekraftig matproduksjon i Norge. Ved \u00e5 se etter Debio-merket, kan forbrukere enkelt identifisere og kj\u00f8pe produkter som er i tr\u00e5d med deres \u00f8nske om \u00e5 spise \u00f8kologisk.</div>",
+                    "note": null,
+                    "icon": {
+                        "svg": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/svg/Debio.svg",
+                        "png": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/png/Debio.png"
+                    }
+                },
+                {
+                    "name": "e_merket",
+                    "display_name": "e-merket",
+                    "description": "E-merket er en valgfri merkeordning for ferdigpakninger i EU/E\u00d8S-land, som sikrer korrekt nettoinnhold. Det gir forbrukerne trygghet og tillit til produktene de kj\u00f8per.",
+                    "organization": null,
+                    "alternative_names": null,
+                    "type": null,
+                    "year_established": 2008,
+                    "about": "<div>\u212e-tegnet, ogs\u00e5 kjent som e-merket eller e-symbolet, er en valgfri merkeordning for ferdigpakninger som eksporteres mellom EU/E\u00d8S-land, inkludert Norge. Regelverket for e-merket er basert p\u00e5 <a href=\"https://eur-lex.europa.eu/legal-content/EN/LSU/?uri=celex:31976L0211\">EU-direktiv 76/211/EEC</a> og implementeres i Norge gjennom E\u00d8S-avtalen og <a href=\"https://lovdata.no/dokument/LTI/forskrift/2007-12-21-1730\">forskriften om krav til nettoinnhold i ferdigpakninger</a>. \u212e-tegnet st\u00e5r for \"quantit\u00e9 estim\u00e9e\" (fransk for \"antatt mengde\").<br><br>Form\u00e5let med e-merket er \u00e5 sikre at ferdigpakninger inneholder minst like mye som angitt p\u00e5 pakken. Merket brukes p\u00e5 produkter fylt til forh\u00e5ndsbestemte vektklasser eller volum, fra 5 gram/5 ml til 10 kg/10 l. Grenser er fastsatt for tillatt avvik fra oppgitt innhold i hver pakning.<br><br>Bedrifter kan velge \u00e5 bruke e-merket, men m\u00e5 f\u00f8lge forskriften og melde fra til Justervesenet. Import av e-merkede varer pakket utenfor EU/E\u00d8S-omr\u00e5det er ulovlig uten godkjenning fra Justervesenet. Ved e-merking i et annet EU-/E\u00d8S-land er ikke godkjenning fra Justervesenet n\u00f8dvendig.<br><br>E-merket er en viktig indikator for forbrukerne, da det garanterer at ferdigpakningene oppfyller kravene til nettoinnhold. Dette sikrer riktig mengde i produktene og forhindrer feilinformasjon. Ved \u00e5 bruke e-merket viser bedrifter at de leverer kvalitetsprodukter og f\u00f8lger regelverket for nettoinnhold i ferdigpakninger.</div>",
+                    "note": null,
+                    "icon": {
+                        "svg": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/svg/E-Merket.svg",
+                        "png": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/png/E-Merket.png"
+                    }
+                },
+                {
+                    "name": "euroleaf",
+                    "display_name": "EuroLeaf",
+                    "description": "Euroleaf-logoen er et offisielt merke for \u00f8kologiske produkter som oppfyller EU-standardene for \u00f8kologisk produksjon og merking.",
+                    "organization": "Den europeiske union (EU)",
+                    "alternative_names": null,
+                    "type": null,
+                    "year_established": 2010,
+                    "about": null,
+                    "note": null,
+                    "icon": {
+                        "svg": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/svg/Euroleaf.svg",
+                        "png": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/labels/png/Euroleaf.png"
+                    }
+                }
+            ],
+            "created_at": "2022-01-09T19:28:49.000000Z",
+            "updated_at": "2024-04-25T07:01:08.000000Z"
+        },
+        {
+            "id": 10,
+            "name": "Smoothie Biter Jordb\u00e6r&Banan 6g Kiddylicious",
+            "brand": "Kiddylicious",
+            "vendor": "Friele foods as",
+            "ean": "5060040255452",
+            "url": "https://joker.no/nettbutikk/varer/barneprodukter/barnekjeks/smoothie-biter-5060040255452",
+            "image": "https://bilder.ngdata.no/5060040255452/kmh/large.jpg",
+            "category": [
+                {
+                    "id": 16,
+                    "depth": -1,
+                    "name": "Barneprodukter"
+                },
+                {
+                    "id": 239,
+                    "depth": 0,
+                    "name": "Barnekjeks"
+                }
+            ],
+            "description": null,
+            "ingredients": "Banan pure (90%), jordb\u00e6r pure (10%)",
+            "current_price": 19.9,
+            "current_unit_price": 3316.67,
+            "weight": 6,
+            "weight_unit": "g",
+            "store": {
+                "name": "Joker",
+                "code": "JOKER_NO",
+                "url": "https://joker.no/nettbutikk/varer",
+                "logo": "https://cdn.kassal.app/69a84df6-7ca8-4427-8f9f-1723b060e78c/logos/Joker.svg"
+            },
+            "price_history": [
+                {
+                    "price": 19.9,
+                    "date": "2024-04-25T07:00:47.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-23T07:00:47.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-22T07:00:46.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-21T07:00:38.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-20T07:00:42.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-19T07:00:42.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-18T07:00:47.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-17T07:00:49.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-16T07:00:43.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-15T07:00:53.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-14T07:00:59.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-13T07:01:03.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-12T07:01:12.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-11T07:01:11.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-10T07:01:03.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-09T07:01:04.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-08T07:00:58.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-07T07:01:07.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-06T07:00:54.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-05T07:00:57.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-04T07:00:58.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-03T07:00:51.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-02T07:00:47.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-04-01T07:00:52.000000Z"
+                },
+                {
+                    "price": 19.9,
+                    "date": "2024-03-31T07:00:41.000000Z"
+                }
+            ],
+            "allergens": [
+                {
+                    "code": "blotdyr",
+                    "display_name": "Bl\u00f8tdyr",
+                    "contains": "NO"
+                },
+                {
+                    "code": "egg",
+                    "display_name": "Egg",
+                    "contains": "NO"
+                },
+                {
+                    "code": "fisk",
+                    "display_name": "Fisk",
+                    "contains": "NO"
+                },
+                {
+                    "code": "gluten",
+                    "display_name": "Gluten",
+                    "contains": "NO"
+                },
+                {
+                    "code": "lupiner",
+                    "display_name": "Lupiner",
+                    "contains": "NO"
+                },
+                {
+                    "code": "melk",
+                    "display_name": "Melk",
+                    "contains": "NO"
+                },
+                {
+                    "code": "notter",
+                    "display_name": "N\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "peanotter",
+                    "display_name": "Pean\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "selleri",
+                    "display_name": "Selleri",
+                    "contains": "NO"
+                },
+                {
+                    "code": "sennep",
+                    "display_name": "Sennep",
+                    "contains": "NO"
+                },
+                {
+                    "code": "sesam",
+                    "display_name": "Sesam",
+                    "contains": "NO"
+                },
+                {
+                    "code": "skalldyr",
+                    "display_name": "Skalldyr",
+                    "contains": "NO"
+                },
+                {
+                    "code": "soya",
+                    "display_name": "Soya",
+                    "contains": "NO"
+                },
+                {
+                    "code": "sulfitt",
+                    "display_name": "Sulfitt",
+                    "contains": "NO"
+                },
+                {
+                    "code": "cashewnott",
+                    "display_name": "Cashewn\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "hasselnott",
+                    "display_name": "Hasseln\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "macadamianott",
+                    "display_name": "Macademiann\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "mandel",
+                    "display_name": "Mandler",
+                    "contains": "NO"
+                },
+                {
+                    "code": "paranott",
+                    "display_name": "Paran\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "pekannott",
+                    "display_name": "Pekann\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "pistasjnott",
+                    "display_name": "Pistasjn\u00f8tter",
+                    "contains": "NO"
+                },
+                {
+                    "code": "valnott",
+                    "display_name": "Valn\u00f8tter",
+                    "contains": "NO"
+                }
+            ],
+            "nutrition": [
+                {
+                    "code": "energi_kcal",
+                    "display_name": "Kalorier",
+                    "amount": 345,
+                    "unit": "kcal"
+                },
+                {
+                    "code": "energi_kj",
+                    "display_name": "Energi",
+                    "amount": 1460,
+                    "unit": "kj"
+                },
+                {
+                    "code": "fett_totalt",
+                    "display_name": "Fett",
+                    "amount": 0.5,
+                    "unit": "g"
+                },
+                {
+                    "code": "karbohydrater",
+                    "display_name": "Karbohydrater",
+                    "amount": 76.3,
+                    "unit": "g"
+                },
+                {
+                    "code": "kostfiber",
+                    "display_name": "Kostfiber",
+                    "amount": 8.6,
+                    "unit": "g"
+                },
+                {
+                    "code": "mettet_fett",
+                    "display_name": "Mettet fett",
+                    "amount": 0.2,
+                    "unit": "g"
+                },
+                {
+                    "code": "protein",
+                    "display_name": "Protein",
+                    "amount": 4.4,
+                    "unit": "g"
+                },
+                {
+                    "code": "salt",
+                    "display_name": "Salt",
+                    "amount": 0.01,
+                    "unit": "g"
+                },
+                {
+                    "code": "sukkerarter",
+                    "display_name": "Sukkerarter",
+                    "amount": 67.7,
+                    "unit": "g"
+                }
+            ],
+            "labels": [],
+            "created_at": "2022-01-09T19:28:49.000000Z",
+            "updated_at": "2024-04-25T07:00:47.000000Z"
+        }
+    ],
+    "links": {
+        "first": "https://kassal.app/api/v1/products?page=1",
+        "last": null,
+        "prev": null,
+        "next": "https://kassal.app/api/v1/products?page=2"
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "path": "https://kassal.app/api/v1/products",
+        "per_page": 10,
+        "to": 10
+    }
+}
