@@ -1,3 +1,5 @@
 .env
 
-products.json
+*.json
+
+**/__pycache__/
