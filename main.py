@@ -3,7 +3,7 @@ from api.get_api_data import get_products
 from api.get_products_with_ean import get_products_with_ean
 from api.get_products_with_id import get_products_with_id
 from api.get_price_data import get_price_data
-from database.data_access import create_database, insert_products
+from database.data_access import create_database, insert_products, fetch_products, fetch_prices
 
 
 #json_object = json.dumps(products, indent=4)
@@ -12,8 +12,11 @@ from database.data_access import create_database, insert_products
 #   file.write(json_object)
 
 products = get_products()
-create_database()
 
+try:
+    create_database()
+except:
+    pass
 # print(len(products["data"]))
 
 #   merkevare, bilde (hvis tilgjengelig) og produkt-ID
@@ -53,7 +56,7 @@ create_database()
 
 
 
-
+print(f"number of products: {len(products['data'])}")
 for product in products["data"]:
 
     #if product["id"] == 32:
@@ -74,3 +77,17 @@ for product in products["data"]:
     print("-----------------------")
     
 
+print("The products:")
+produkter = fetch_products()
+temp_prices = fetch_prices(produkter[0][1])
+print(temp_prices)
+
+for product in produkter:
+    if product[1] != "Missing EAN":
+        
+        print(f"Product {product[2]} with EAN {product[1]} ")
+        print("Prices at stores from lowest to highest:")
+        product_prices = fetch_prices(product[1])
+        for product_price in product_prices:
+            print(f"Sold at {product_price[1]} for {product_price[2]}")
+        

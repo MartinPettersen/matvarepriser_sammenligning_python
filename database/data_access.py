@@ -47,23 +47,40 @@ def insert_products(id, ean, name, description, category, brand, image):
     
     res = cursor.execute("SELECT name FROM product")
     test = res.fetchall()
-    #print(test)
+    print(test)
     insert_prices(ean)
     
+
+def fetch_products():
+    res = cursor.execute("SELECT * FROM product")
+    test = res.fetchall()
+    return test
+
+def fetch_prices(ean):
+    res = cursor.execute("SELECT * FROM pricelist WHERE ean = ? ORDER BY price ASC", (ean,))
+    test = res.fetchall()
+    return test    
+        
+
 def insert_prices(ean):
 
-    store_prices = get_price_data(ean)
+    try:
+        store_prices = get_price_data(ean)
     
-    cursor.execute("SELECT 1 FROM pricelist WHERE ean = ?", (ean,))
-    exists = cursor.fetchone()
+        cursor.execute("SELECT 1 FROM pricelist WHERE ean = ?", (ean,))
+        exists = cursor.fetchone()
     
-    if not exists:
-        for store_price in store_prices:
-            #print(store_price)
-            #print(ean)
-            # print(store_price["current_price"]["price"])
+        if not exists:
+            for store_price in store_prices:
+                #print(store_price)
+                #print(ean)
+                # print(store_price["current_price"]["price"])
             
-            #print(ean, store_price.store, store_prices.current_price)
-            cursor.execute('INSERT INTO pricelist VALUES (?, ?, ?)',(ean, store_price["store"], store_price["current_price"]["price"]))
-    
+                #print(ean, store_price.store, store_prices.current_price)
+                cursor.execute('INSERT INTO pricelist VALUES (?, ?, ?)',(ean, store_price["store"], store_price["current_price"]["price"]))
+        else:
+            print("Allready exists")
+    except:
+        print("Missing EAN")
+
     
