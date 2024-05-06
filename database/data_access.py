@@ -3,16 +3,16 @@ import json
 
 from api.get_price_data import get_price_data
 
-connection = sqlite3.connect("matvarepriser.db")
+connection = sqlite3.connect("matvarepriser.db",check_same_thread=False)
 
 cursor = connection.cursor()
 
 def create_database():
     print("i run")
 
-    cursor.execute("CREATE TABLE product(id, ean, name, description, category JSON, brand, image)")
+    cursor.execute("CREATE TABLE product(id, ean, name, description, category JSON, brand, image,created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
     cursor.execute("DROP TABLE IF EXISTS pricelist")
-    cursor.execute("CREATE TABLE pricelist(ean, store, price)")
+    cursor.execute("CREATE TABLE pricelist(ean, store, price, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
 
 def insert_products(id, ean, name, description, category, brand, image):
     
@@ -42,13 +42,16 @@ def insert_products(id, ean, name, description, category, brand, image):
     category_json_array = json.dumps(category_list)
 
     
-    cursor.execute(f"""INSERT INTO product VALUES (?, ?, ?, ?, json(?), ?, ?)""", (id, ean, name, description, category_json_array, brand, image) )
-    
+    cursor.execute(f"""INSERT INTO product VALUES (?, ?, ?, ?, json(?), ?, ?, current_timestamp, current_timestamp)""", (id, ean, name, description, category_json_array, brand, image) )
     
     res = cursor.execute("SELECT name FROM product")
     test = res.fetchall()
     print(test)
-    insert_prices(ean)
+    test_time = cursor.execute("SELECT created_at FROM product")
+    time = test_time.fetchall()
+    
+    print(time)
+    print(f"is was created at {time}")
     
 
 def fetch_products():
@@ -57,6 +60,7 @@ def fetch_products():
     return test
 
 def fetch_prices(ean):
+    insert_prices(ean)
     res = cursor.execute("SELECT * FROM pricelist WHERE ean = ? ORDER BY price ASC", (ean,))
     test = res.fetchall()
     return test    
@@ -77,7 +81,7 @@ def insert_prices(ean):
                 # print(store_price["current_price"]["price"])
             
                 #print(ean, store_price.store, store_prices.current_price)
-                cursor.execute('INSERT INTO pricelist VALUES (?, ?, ?)',(ean, store_price["store"], store_price["current_price"]["price"]))
+                cursor.execute('INSERT INTO pricelist VALUES (?, ?, ?, current_timestamp, current_timestamp)',(ean, store_price["store"], store_price["current_price"]["price"]))
         else:
             print("Allready exists")
     except:

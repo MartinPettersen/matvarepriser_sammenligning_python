@@ -4,7 +4,7 @@ from api.get_products_with_ean import get_products_with_ean
 from api.get_products_with_id import get_products_with_id
 from api.get_price_data import get_price_data
 from database.data_access import create_database, insert_products, fetch_products, fetch_prices
-
+from flask import Flask, jsonify
 
 #json_object = json.dumps(products, indent=4)
 
@@ -78,16 +78,42 @@ for product in products["data"]:
     
 
 print("The products:")
-produkter = fetch_products()
-temp_prices = fetch_prices(produkter[0][1])
-print(temp_prices)
+#produkter = fetch_products()
+#temp_prices = fetch_prices(produkter[0][1])
+#print(temp_prices)
 
-for product in produkter:
-    if product[1] != "Missing EAN":
+#for product in produkter:
+#    if product[1] != "Missing EAN":
+#        
+#        print(f"Product {product[2]} with EAN {product[1]} ")
+#        print("Prices at stores from lowest to highest:")
+#        product_prices = fetch_prices(product[1])
+#        for product_price in product_prices:
+#            print(f"Sold at {product_price[1]} for {product_price[2]}")
         
-        print(f"Product {product[2]} with EAN {product[1]} ")
-        print("Prices at stores from lowest to highest:")
-        product_prices = fetch_prices(product[1])
-        for product_price in product_prices:
-            print(f"Sold at {product_price[1]} for {product_price[2]}")
-        
+def get_products_list():
+    produkter = fetch_products()
+    return produkter
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'hello, world'
+
+@app.route('/products', methods=['GET'])
+def get_products():
+    produkter = get_products_list()
+    
+    return produkter
+    
+    #return jsonify({'products': produkter})
+
+@app.route('/product/price/<ean>', methods=['GET'])
+def get_product_prices(ean):
+    return fetch_prices(ean)
+
+
+if __name__ == '__main__':
+    app.run()
+    pass
