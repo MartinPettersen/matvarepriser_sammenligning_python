@@ -1,0 +1,1 @@
+compare_stores(ean, query)

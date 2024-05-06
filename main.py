@@ -3,13 +3,10 @@ from api.get_api_data import get_products
 from api.get_products_with_ean import get_products_with_ean
 from api.get_products_with_id import get_products_with_id
 from api.get_price_data import get_price_data
-from database.data_access import create_database, insert_products, fetch_products, fetch_prices
+from database.data_access import compare_stores, create_database, insert_products, fetch_products, fetch_prices
 from flask import Flask, jsonify
 
-#json_object = json.dumps(products, indent=4)
-
-#with open("products.json", "w") as file:
-#   file.write(json_object)
+from api.get_stores_close_by import get_stores_by_procimity
 
 products = get_products()
 
@@ -17,44 +14,6 @@ try:
     create_database()
 except:
     pass
-# print(len(products["data"]))
-
-#   merkevare, bilde (hvis tilgjengelig) og produkt-ID
-
-
-
-#products_with_same_ean = get_products_with_ean(7035620025037)
-
-#print(len(products_with_same_ean["data"]["products"]))
-
-##print(products_with_same_ean["data"]["products"])
-
-#for pr in products_with_same_ean["data"]["products"]:
-#    print(pr["name"])
-#    
-#    print(pr["current_price"])
-#    print(pr["store"]["name"])
-#    
-#    print("-----------------------")
-#    print(f"elenfant: {None or 'dead'}")
-
-
-
-
-#products_with_same_id = get_products_with_id(1)
-
-#print(len(products_with_same_id["data"]))
-#print(products_with_same_id["data"]["vendor"])
-
-#print(products_with_same_ean["data"]["products"])
-
-#for pr in products_with_same_id["data"]:
-#    print(pr)
-
-
-
-
-
 
 print(f"number of products: {len(products['data'])}")
 for product in products["data"]:
@@ -91,9 +50,6 @@ print("The products:")
 #        for product_price in product_prices:
 #            print(f"Sold at {product_price[1]} for {product_price[2]}")
         
-def get_products_list():
-    produkter = fetch_products()
-    return produkter
 
 app = Flask(__name__)
 
@@ -101,19 +57,26 @@ app = Flask(__name__)
 def hello_world():
     return 'hello, world'
 
+
 @app.route('/products', methods=['GET'])
 def get_products():
-    produkter = get_products_list()
+    produkter = fetch_products()
     
     return produkter
-    
-    #return jsonify({'products': produkter})
+
 
 @app.route('/product/price/<ean>', methods=['GET'])
 def get_product_prices(ean):
     return fetch_prices(ean)
 
 
+@app.route('/product/price/<ean>search_query=<query>', methods=['GET'])
+def compare_store_prices(ean, query):
+    print("i get called")
+    
+    return compare_stores(ean, query)
+
+print(get_stores_by_procimity(59.00, 10.20))
 if __name__ == '__main__':
     app.run()
     pass

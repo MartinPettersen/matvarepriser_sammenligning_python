@@ -8,7 +8,6 @@ connection = sqlite3.connect("matvarepriser.db",check_same_thread=False)
 cursor = connection.cursor()
 
 def create_database():
-    print("i run")
 
     cursor.execute("CREATE TABLE product(id, ean, name, description, category JSON, brand, image,created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
     cursor.execute("DROP TABLE IF EXISTS pricelist")
@@ -49,7 +48,6 @@ def insert_products(id, ean, name, description, category, brand, image):
     print(test)
     test_time = cursor.execute("SELECT created_at FROM product")
     time = test_time.fetchall()
-    
     print(time)
     print(f"is was created at {time}")
     
@@ -65,6 +63,33 @@ def fetch_prices(ean):
     test = res.fetchall()
     return test    
         
+def compare_stores(ean, query):
+    insert_prices(ean)
+    queries = query.split("+")
+    test_que = [ "Meny","KIWI"]
+    
+    stores = ""
+    for  i in range(0,len(test_que)):
+        if i > 0:
+            stores += f"OR store = ? "
+        else:
+            stores += f"AND store = ?  "
+            
+    print(stores)
+    combined_list = []
+    for store in queries:
+        res = cursor.execute(f"SELECT * FROM pricelist WHERE ean = ? AND store = ?  ORDER BY price ASC", (ean, store))
+        test = res.fetchall()
+        print(test)
+        print("rin in here")
+        combined_list += test
+        
+    print(combined_list)
+    print(queries)
+    combined_list.sort(key=lambda x: x[1], reverse=False)    
+    print(combined_list)
+    
+    return combined_list
 
 def insert_prices(ean):
 
