@@ -11,7 +11,9 @@ def create_database():
 
     cursor.execute("CREATE TABLE product(id, ean, name, description, category JSON, brand, image,created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
     cursor.execute("DROP TABLE IF EXISTS pricelist")
+    cursor.execute("DROP TABLE IF EXISTS keyslist")
     cursor.execute("CREATE TABLE pricelist(ean, store, price, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
+    cursor.execute("CREATE TABLE keyslist(key, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
 
 def insert_products(id, ean, name, description, category, brand, image):
     
@@ -113,3 +115,20 @@ def insert_prices(ean):
         print("Missing EAN")
 
     
+    
+
+def insert_key(user_key):
+    print(f"the key {len(user_key)}")
+    try:
+        cursor.execute('INSERT INTO keyslist VALUES (?, current_timestamp, current_timestamp)',(user_key,))
+        #res = cursor.execute("SELECT * FROM keyslist")
+        #test = res.fetchall()
+        #print(test)
+    except sqlite3.DatabaseError as e:
+        print(f"Database error: {e}")
+
+def check_for_key(user_key):
+    res = cursor.execute("SELECT key FROM keyslist WHERE key = ?", (user_key,))
+    test = res.fetchall()
+    print(test)
+    return len(test) != 0    

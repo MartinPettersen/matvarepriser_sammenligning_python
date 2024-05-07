@@ -3,8 +3,9 @@ from api.get_api_data import get_products
 from api.get_products_with_ean import get_products_with_ean
 from api.get_products_with_id import get_products_with_id
 from api.get_price_data import get_price_data
-from database.data_access import compare_stores, create_database, insert_products, fetch_products, fetch_prices
-from flask import Flask, jsonify
+from database.data_access import check_for_key, compare_stores, create_database, insert_key, insert_products, fetch_products, fetch_prices
+from flask import Flask, jsonify, request
+from uuid import uuid4
 
 from api.get_stores_close_by import get_stores_by_procimity
 
@@ -28,15 +29,28 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'This is a simple API ment to be practice'
+    user_key = request.headers.get('Authorization')
+    new_key = str(uuid4())
+    print(new_key)
+    insert_key(new_key)
+    test = check_for_key(new_key)
+    print(test)
+    return f'This is a simple API ment to be practice {user_key}, your new key is: {new_key}'
 
 
 @app.route('/products', methods=['GET'])
 def get_products():
-    produkter = fetch_products()
+    user_key = request.headers.get('Authorization')
+    print(user_key)
+    test = check_for_key(user_key)
+    print(test)
     
-    return produkter
-
+    if test:
+        produkter = fetch_products()
+    
+        return produkter
+    else:
+        return "Unathorized Access"
 
 @app.route('/product/price/<ean>', methods=['GET'])
 def get_product_prices(ean):
