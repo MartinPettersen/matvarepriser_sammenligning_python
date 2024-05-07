@@ -9,16 +9,16 @@ from uuid import uuid4
 
 from api.get_stores_close_by import get_stores_by_procimity
 
-#products = get_products()
+products = get_products()
 
-#try:
-    #create_database()
-#except:
-#    pass
+try:
+    create_database()
+except:
+    pass
 
-#for product in products["data"]:
-
-#    insert_products(product["id"] or 'Mangler ID', product["ean"] or 'Mangler ean', product["name"] or 'Mangler navn',product["description"] or 'Mangler beskrivelse', product["category"] or 'Mangler Kategori', product["brand"] or 'Mangler merkevare', product["image"] or "https://bilder.ngdata.no/7035620025037/meny/large.jpg" )
+for product in products["data"]:
+    pass
+    insert_products(product["id"] or 'Mangler ID', product["ean"] or 'Mangler ean', product["name"] or 'Mangler navn',product["description"] or 'Mangler beskrivelse', product["category"] or 'Mangler Kategori', product["brand"] or 'Mangler merkevare', product["image"] or "https://bilder.ngdata.no/7035620025037/meny/large.jpg" )
     
 
      

@@ -62,9 +62,7 @@ def fetch_prices(ean):
     insert_prices(ean)
     res = cursor.execute("SELECT * FROM pricelist WHERE ean = ? ORDER BY price ASC", (ean,))
     test = res.fetchall()
-    print(test[0][3])
-    current_time = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
-    print(f"this was create at: {test[0][3]}, current time is: {current_time}, the time gap is {(datetime.strptime(current_time, '%Y-%m-%d %H:%M:%S') - datetime.strptime(test[0][3], '%Y-%m-%d %H:%M:%S')).seconds}")
+    
     return test    
         
 def compare_stores(ean, query):
@@ -106,13 +104,22 @@ def insert_prices(ean):
                 connection.commit()
                 
         else:
-            res = cursor.execute("SELECT 1 FROM pricelist")
+            res = cursor.execute("SELECT * FROM pricelist ORDER BY created_at DESC")
             test = res.fetchall()
-            print("--------")
-            print(test)
-            print("--------")
+            #print("--------")
+            #print(test[0][3])
+            current_time = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+            #print(f"current time: {current_time}")
+            #print(f"test[0][3]: {test[0][3]}")
             
-            print("Allready exists")
+            time_gap = (datetime.strptime(current_time, '%Y-%m-%d %H:%M:%S') - datetime.strptime(test[0][3], '%Y-%m-%d %H:%M:%S')).days
+            #print(f"this was create at: {test[0][3]}, current time is: {current_time}, the time gap is {(datetime.strptime(current_time, '%Y-%m-%d %H:%M:%S') - datetime.strptime(test[0][3], '%Y-%m-%d %H:%M:%S')).days}")
+            if time_gap > 7:
+                res = cursor.execute("DELETE FROM pricelist where ean = ? ", (ean,))
+                #print(res)
+                insert_prices(ean)
+            #print("--------")
+            
     except sqlite3.DatabaseError as e:
         print(f"Database error: {e}")
 
