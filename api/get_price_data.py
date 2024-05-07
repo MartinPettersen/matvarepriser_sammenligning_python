@@ -23,8 +23,8 @@ def get_price_data(ean):
     # print(len(products_with_same_ean["data"]["products"]))
 
     #print(products_with_same_ean["data"]["products"])
-    print("\n\n\n\n\n\n\n")
-    print(len(products_with_same_ean["data"]["products"]))
+    #print("\n\n\n\n\n\n\n")
+    #print(len(products_with_same_ean["data"]["products"]))
 
     if type(products_with_same_ean["data"]["products"]) != "NoneType":
         store_prices = [{"store": product["store"]["name"] or 'Mangler butikk', "current_price": product["current_price"] or 'Mangler pris' } for product in products_with_same_ean["data"]["products"]]

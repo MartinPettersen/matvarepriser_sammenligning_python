@@ -3,8 +3,9 @@ from api.get_api_data import get_products
 from api.get_products_with_ean import get_products_with_ean
 from api.get_products_with_id import get_products_with_id
 from api.get_price_data import get_price_data
-from database.data_access import check_for_key, compare_stores, create_database, insert_key, insert_products, fetch_products, fetch_prices, see_keys
+from database.data_access import check_for_key, compare_stores, create_database, insert_key, insert_products, fetch_products, fetch_prices
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 from uuid import uuid4
 
 from api.get_stores_close_by import get_stores_by_procimity
@@ -24,6 +25,7 @@ for product in products["data"]:
      
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def hello_new_user():
@@ -39,7 +41,29 @@ def get_products():
     
     if test:
         produkter = fetch_products()    
-        return produkter
+        # print(produkter)
+        
+        rows = []
+    
+        for row in produkter:
+            product = {
+                "id": row[0],
+                "ean": row[1],
+                "name": row[2],        
+                "description": row[3],
+                "category": row[4],
+                "brand": row[5],
+                "image": row[6],
+                "created_at": row[7],        
+                "updated_at": row[8],        
+            }
+            rows.append(product)
+
+        products = {
+            "products": rows
+        }
+        
+        return products
     else:
         return "Unathorized Access"
 
@@ -74,6 +98,11 @@ def get_stores_by_proximity(lat, lng):
         return "Unathorized Access"
     #lat=59.9333&lng=10.7166
 
+# http://127.0.0.1:5000/
+# http://127.0.0.1:5000/products
+# http://127.0.0.1:5000/product/price/7035620025037
+# http://127.0.0.1:5000/product/price/7035620025037search_query=KIWI+Joker
+# http://127.0.0.1:5000/stores/proximity/lat=63.4308&lng=10.4034
 
 if __name__ == '__main__':
     app.run()

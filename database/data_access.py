@@ -44,18 +44,22 @@ def insert_products(id, ean, name, description, category, brand, image):
     cursor.execute(f"""INSERT INTO product VALUES (?, ?, ?, ?, json(?), ?, ?, current_timestamp, current_timestamp)""", (id, ean, name, description, category_json_array, brand, image) )
     connection.commit()
 
-    res = cursor.execute("SELECT name FROM product")
-    test = res.fetchall()
-    print(test)
-    test_time = cursor.execute("SELECT created_at FROM product")
-    time = test_time.fetchall()
-    print(time)
-    print(f"is was created at {time}")
+    #res = cursor.execute("SELECT name FROM product")
+    #test = res.fetchall()
+    #print(test)
+    #test_time = cursor.execute("SELECT created_at FROM product")
+    #time = test_time.fetchall()
+    #print(time)
+    #print(f"is was created at {time}")
     
 
 def fetch_products():
     res = cursor.execute("SELECT * FROM product")
     test = res.fetchall()
+    #print(test[0][1])
+
+
+    # id, ean, name, description, category JSON, brand, image,created_at
     return test
 
 def fetch_prices(ean):
@@ -137,12 +141,5 @@ def insert_key(user_key):
 def check_for_key(user_key):
     res = cursor.execute("SELECT key FROM keyslist WHERE key = ?", (user_key,))
     test = res.fetchall()
-    print(test)
+    #print(test)
     return len(test) != 0    
-
-def see_keys():
-    res = cursor.execute("SELECT * FROM keyslist")
-    test = res.fetchall()
-    print("-----")
-    print(test)
-    print("-----")
