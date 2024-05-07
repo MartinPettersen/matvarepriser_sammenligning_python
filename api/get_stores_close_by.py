@@ -12,7 +12,7 @@ load_dotenv()
 def get_stores_by_procimity(lat, lng):
     print("lat long")
     try:
-        url = f"https://kassal.app/api/v1/physical-stores?lat=59.9333&lng=10.7166"
+        url = f"https://kassal.app/api/v1/physical-stores?lat={lat}&lng={lng}"
         headers = { "Authorization": f"Bearer {os.getenv('KASSAL_KEY')}"}
         res = requests.get(url, headers=headers)
         print(res)
