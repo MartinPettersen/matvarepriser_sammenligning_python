@@ -28,48 +28,56 @@ print("The products:")
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
+def hello_new_user():
     user_key = request.headers.get('Authorization')
     new_key = str(uuid4())
-    print(new_key)
     insert_key(new_key)
-    test = check_for_key(new_key)
-    print(test)
-    return f'This is a simple API ment to be practice {user_key}, your new key is: {new_key}'
+    return f'This is a simple API ment to be practice, your user key is: {new_key}'
 
 
 @app.route('/products', methods=['GET'])
 def get_products():
     user_key = request.headers.get('Authorization')
-    print(user_key)
     test = check_for_key(user_key)
-    print(test)
     
     if test:
-        produkter = fetch_products()
-    
+        produkter = fetch_products()    
         return produkter
     else:
         return "Unathorized Access"
 
 @app.route('/product/price/<ean>', methods=['GET'])
 def get_product_prices(ean):
-    return fetch_prices(ean)
-
+    user_key = request.headers.get('Authorization')
+    test = check_for_key(user_key)
+    
+    if test:
+        return fetch_prices(ean)
+    else:
+        return "Unathorized Access"
 
 @app.route('/product/price/<ean>search_query=<query>', methods=['GET'])
 def compare_store_prices(ean, query):
-    print("i get called")
+    user_key = request.headers.get('Authorization')
+    test = check_for_key(user_key)
     
-    return compare_stores(ean, query)
-
+    if test:
+        return compare_stores(ean, query)
+    else:
+        return "Unathorized Access"
+    
 @app.route('/stores/proximity/lat=<lat>&lng=<lng>', methods=['GET'])
 def get_stores_by_proximity(lat, lng):
-    return get_stores_by_procimity(lat, lng)
+    user_key = request.headers.get('Authorization')
+    test = check_for_key(user_key)
+    
+    if test:
+        return get_stores_by_procimity(lat, lng)
+    else:
+        return "Unathorized Access"
     #lat=59.9333&lng=10.7166
 
 
-print(get_stores_by_procimity(59.00, 10.20))
 if __name__ == '__main__':
     app.run()
     pass
