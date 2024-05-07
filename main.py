@@ -3,33 +3,30 @@ from api.get_api_data import get_products
 from api.get_products_with_ean import get_products_with_ean
 from api.get_products_with_id import get_products_with_id
 from api.get_price_data import get_price_data
-from database.data_access import check_for_key, compare_stores, create_database, insert_key, insert_products, fetch_products, fetch_prices
+from database.data_access import check_for_key, compare_stores, create_database, insert_key, insert_products, fetch_products, fetch_prices, see_keys
 from flask import Flask, jsonify, request
 from uuid import uuid4
 
 from api.get_stores_close_by import get_stores_by_procimity
 
-products = get_products()
+#products = get_products()
 
-try:
-    create_database()
-except:
-    pass
+#try:
+    #create_database()
+#except:
+#    pass
 
-print(f"number of products: {len(products['data'])}")
-for product in products["data"]:
+#for product in products["data"]:
 
-    insert_products(product["id"] or 'Mangler ID', product["ean"] or 'Mangler ean', product["name"] or 'Mangler navn',product["description"] or 'Mangler beskrivelse', product["category"] or 'Mangler Kategori', product["brand"] or 'Mangler merkevare', product["image"] or "https://bilder.ngdata.no/7035620025037/meny/large.jpg" )
+#    insert_products(product["id"] or 'Mangler ID', product["ean"] or 'Mangler ean', product["name"] or 'Mangler navn',product["description"] or 'Mangler beskrivelse', product["category"] or 'Mangler Kategori', product["brand"] or 'Mangler merkevare', product["image"] or "https://bilder.ngdata.no/7035620025037/meny/large.jpg" )
     
 
-print("The products:")
      
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello_new_user():
-    user_key = request.headers.get('Authorization')
     new_key = str(uuid4())
     insert_key(new_key)
     return f'This is a simple API ment to be practice, your user key is: {new_key}'

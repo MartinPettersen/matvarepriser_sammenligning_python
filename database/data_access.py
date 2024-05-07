@@ -1,5 +1,6 @@
 import sqlite3
 import json
+from datetime import datetime
 
 from api.get_price_data import get_price_data
 
@@ -33,8 +34,6 @@ def insert_products(id, ean, name, description, category, brand, image):
             cursor.execute('INSERT INTO temp_category (id, depth, name) values (?, ?, ?)',
                           (cat['id'], cat['depth'], cat['name']) )
 
-    
-
         for row in cursor.execute('SELECT id, depth, name FROM temp_category'):
             category_dict = {'id': row[0], 'depth': row[1], 'name': row[2]}
             category_list.append(category_dict)
@@ -43,7 +42,8 @@ def insert_products(id, ean, name, description, category, brand, image):
 
     
     cursor.execute(f"""INSERT INTO product VALUES (?, ?, ?, ?, json(?), ?, ?, current_timestamp, current_timestamp)""", (id, ean, name, description, category_json_array, brand, image) )
-    
+    connection.commit()
+
     res = cursor.execute("SELECT name FROM product")
     test = res.fetchall()
     print(test)
@@ -62,6 +62,9 @@ def fetch_prices(ean):
     insert_prices(ean)
     res = cursor.execute("SELECT * FROM pricelist WHERE ean = ? ORDER BY price ASC", (ean,))
     test = res.fetchall()
+    print(test[0][3])
+    current_time = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+    print(f"this was create at: {test[0][3]}, current time is: {current_time}, the time gap is {(datetime.strptime(current_time, '%Y-%m-%d %H:%M:%S') - datetime.strptime(test[0][3], '%Y-%m-%d %H:%M:%S')).seconds}")
     return test    
         
 def compare_stores(ean, query):
@@ -81,48 +84,46 @@ def compare_stores(ean, query):
     for store in queries:
         res = cursor.execute(f"SELECT * FROM pricelist WHERE ean = ? AND store = ?  ORDER BY price ASC", (ean, store))
         test = res.fetchall()
-        print(test)
-        print("rin in here")
         combined_list += test
         
-    print(combined_list)
-    print(queries)
+
     combined_list.sort(key=lambda x: x[1], reverse=False)    
-    print(combined_list)
     
     return combined_list
 
 def insert_prices(ean):
 
     try:
-        store_prices = get_price_data(ean)
     
         cursor.execute("SELECT 1 FROM pricelist WHERE ean = ?", (ean,))
         exists = cursor.fetchone()
     
         if not exists:
+            store_prices = get_price_data(ean)
             for store_price in store_prices:
-                #print(store_price)
-                #print(ean)
-                # print(store_price["current_price"]["price"])
-            
-                #print(ean, store_price.store, store_prices.current_price)
+
                 cursor.execute('INSERT INTO pricelist VALUES (?, ?, ?, current_timestamp, current_timestamp)',(ean, store_price["store"], store_price["current_price"]["price"]))
+                connection.commit()
+                
         else:
+            res = cursor.execute("SELECT 1 FROM pricelist")
+            test = res.fetchall()
+            print("--------")
+            print(test)
+            print("--------")
+            
             print("Allready exists")
-    except:
-        print("Missing EAN")
+    except sqlite3.DatabaseError as e:
+        print(f"Database error: {e}")
 
     
     
 
 def insert_key(user_key):
-    print(f"the key {len(user_key)}")
     try:
         cursor.execute('INSERT INTO keyslist VALUES (?, current_timestamp, current_timestamp)',(user_key,))
-        #res = cursor.execute("SELECT * FROM keyslist")
-        #test = res.fetchall()
-        #print(test)
+        connection.commit()
+
     except sqlite3.DatabaseError as e:
         print(f"Database error: {e}")
 
@@ -131,3 +132,10 @@ def check_for_key(user_key):
     test = res.fetchall()
     print(test)
     return len(test) != 0    
+
+def see_keys():
+    res = cursor.execute("SELECT * FROM keyslist")
+    test = res.fetchall()
+    print("-----")
+    print(test)
+    print("-----")
