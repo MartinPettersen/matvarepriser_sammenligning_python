@@ -62,6 +62,15 @@ def fetch_products():
     # id, ean, name, description, category JSON, brand, image,created_at
     return test
 
+def fetch_product(id):
+    print(f"id in database request is: {id}")
+    res = cursor.execute("SELECT * FROM product WHERE id = ?", (int(id),))
+    test = res.fetchall()
+    #print(test[0][1])
+    print(f"what we got from database request: {test}")
+    # id, ean, name, description, category JSON, brand, image,created_at
+    return test
+
 def fetch_prices(ean):
     insert_prices(ean)
     res = cursor.execute("SELECT * FROM pricelist WHERE ean = ? ORDER BY price ASC", (ean,))

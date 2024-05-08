@@ -3,7 +3,7 @@ from api.get_api_data import get_products
 from api.get_products_with_ean import get_products_with_ean
 from api.get_products_with_id import get_products_with_id
 from api.get_price_data import get_price_data
-from database.data_access import check_for_key, compare_stores, create_database, insert_key, insert_products, fetch_products, fetch_prices
+from database.data_access import check_for_key, compare_stores, create_database, fetch_product, insert_key, insert_products, fetch_products, fetch_prices
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from uuid import uuid4
@@ -33,6 +33,12 @@ def hello_new_user():
     insert_key(new_key)
     return f'This is a simple API ment to be practice, your user key is: {new_key}'
 
+@app.route('/product/<id>')
+def get_product_by_id(id):
+    print(f"the id is {id}")
+    product = fetch_product(id)
+    print(f"the product is {product}")
+    return product
 
 @app.route('/products', methods=['GET'])
 def get_products():
