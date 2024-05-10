@@ -10,16 +10,15 @@ from uuid import uuid4
 
 from api.get_stores_close_by import get_stores_by_procimity
 
-products = get_products()
-
 try:
+    products = get_products()
+
     create_database()
+
+    for product in products["data"]:
+        insert_products(product["id"] or 'Mangler ID', product["ean"] or 'Mangler ean', product["name"] or 'Mangler navn',product["description"] or 'Mangler beskrivelse', product["category"] or 'Mangler Kategori', product["brand"] or 'Mangler merkevare', product["image"] or "https://bilder.ngdata.no/7035620025037/meny/large.jpg" )
 except:
     pass
-
-for product in products["data"]:
-    pass
-    insert_products(product["id"] or 'Mangler ID', product["ean"] or 'Mangler ean', product["name"] or 'Mangler navn',product["description"] or 'Mangler beskrivelse', product["category"] or 'Mangler Kategori', product["brand"] or 'Mangler merkevare', product["image"] or "https://bilder.ngdata.no/7035620025037/meny/large.jpg" )
     
 
      
@@ -35,9 +34,19 @@ def hello_new_user():
 
 @app.route('/product/<id>')
 def get_product_by_id(id):
-    print(f"the id is {id}")
-    product = fetch_product(id)
-    print(f"the product is {product}")
+    product_data = fetch_product(id)
+    #print(f"the product is {product_data}")
+    product = {
+                "id": product_data[0][0],
+                "ean": product_data[0][1],
+                "name": product_data[0][2],        
+                "description": product_data[0][3],
+                "category": product_data[0][4],
+                "brand": product_data[0][5],
+                "image": product_data[0][6],
+                "created_at": product_data[0][7],        
+                "updated_at": product_data[0][8],        
+            }
     return product
 
 @app.route('/products', methods=['GET'])
@@ -79,7 +88,24 @@ def get_product_prices(ean):
     test = check_for_key(user_key)
     
     if test:
-        return fetch_prices(ean)
+        the_price_list = fetch_prices(ean)
+        
+        rows = []
+        for row in the_price_list:
+            store_price = {
+                "ean": row[0],
+                "store" : row[1],
+                "price" : row[2],
+                "created_at": row[3],
+                "updated_at": row[4],
+            }
+            rows.append(store_price)
+        
+        price_list = {
+            "store_prices": rows
+        }
+        
+        return price_list
     else:
         return "Unathorized Access"
 

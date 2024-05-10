@@ -63,20 +63,20 @@ def fetch_products():
     return test
 
 def fetch_product(id):
-    print(f"id in database request is: {id}")
     res = cursor.execute("SELECT * FROM product WHERE id = ?", (int(id),))
     test = res.fetchall()
     #print(test[0][1])
-    print(f"what we got from database request: {test}")
     # id, ean, name, description, category JSON, brand, image,created_at
     return test
 
 def fetch_prices(ean):
     insert_prices(ean)
-    res = cursor.execute("SELECT * FROM pricelist WHERE ean = ? ORDER BY price ASC", (ean,))
-    test = res.fetchall()
-    
-    return test    
+    try:
+        res = cursor.execute("SELECT * FROM pricelist WHERE ean = ? ORDER BY price ASC", (ean,))
+        test = res.fetchall()
+        return test
+    except:     
+        return "Could not fetch prices"    
         
 def compare_stores(ean, query):
     insert_prices(ean)
@@ -90,8 +90,8 @@ def compare_stores(ean, query):
         else:
             stores += f"AND store = ?  "
             
-    print(stores)
     combined_list = []
+    
     for store in queries:
         res = cursor.execute(f"SELECT * FROM pricelist WHERE ean = ? AND store = ?  ORDER BY price ASC", (ean, store))
         test = res.fetchall()
@@ -111,10 +111,18 @@ def insert_prices(ean):
     
         if not exists:
             store_prices = get_price_data(ean)
-            for store_price in store_prices:
+           
+            if store_prices != "no data":
+                json_object = json.dumps(store_prices, indent=4)
+                with open("sample.json", "w") as outfile:
+                    outfile.write(json_object)
+                for store_price in store_prices:
+                    print("-----------------------------------------------------------------")
+                    print(store_prices)
+                    print("-----------------------------------------------------------------")
 
-                cursor.execute('INSERT INTO pricelist VALUES (?, ?, ?, current_timestamp, current_timestamp)',(ean, store_price["store"], store_price["current_price"]["price"]))
-                connection.commit()
+                    cursor.execute('INSERT INTO pricelist VALUES (?, ?, ?, current_timestamp, current_timestamp)',(ean, store_price["store"], store_price["current_price"]["price"]))
+                    connection.commit()
                 
         else:
             res = cursor.execute("SELECT * FROM pricelist ORDER BY created_at DESC")

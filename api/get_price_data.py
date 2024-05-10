@@ -26,10 +26,28 @@ def get_price_data(ean):
     #print("\n\n\n\n\n\n\n")
     #print(len(products_with_same_ean["data"]["products"]))
 
-    if type(products_with_same_ean["data"]["products"]) != "NoneType":
-        store_prices = [{"store": product["store"]["name"] or 'Mangler butikk', "current_price": product["current_price"] or 'Mangler pris' } for product in products_with_same_ean["data"]["products"]]
-    else:
-        store_prices = "no data"
+
+    #if type(products_with_same_ean["data"]["products"]) != "NoneType":
+    try:    
+        store_prices = []
+
+        for product in products_with_same_ean["data"]["products"]:
+            if product["store"] is not None and product["store"]["name"] is not None:
+                store =  product["store"]["name"]
+            else:
+                store = 'Mangler butikk'
+            
+            if product["current_price"] is not None:
+                current_price =  product["current_price"]
+            else:
+                current_price = 'Mangler pris'
+
+            store_prices.append({ store, current_price })
+            print(store_prices)
+        #store_prices = [{"store": product["store"]["name"] or 'Mangler butikk', "current_price": product["current_price"] or 'Mangler pris' } for product in products_with_same_ean["data"]["products"]]
+    #else:
+    except:
+        store_prices = []
     #for pr in products_with_same_ean["data"]["products"]:
     #    print(pr["name"])
     
