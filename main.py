@@ -113,22 +113,51 @@ def get_product_prices(ean):
 def compare_store_prices(ean, query):
     user_key = request.headers.get('Authorization')
     test = check_for_key(user_key)
+    print(query)
+    
+    stores = compare_stores(ean, query)
+    
+    rows = []
+    for row in stores:
+        store_price = {
+            "ean": row[0],
+            "store" : row[1],
+            "price" : row[2],
+            "created_at": row[3],
+            "updated_at": row[4],
+        }
+        rows.append(store_price)
+        
+    store_list = {
+        "store_prices": rows
+    }
     
     if test:
-        return compare_stores(ean, query)
+        return store_list
     else:
         return "Unathorized Access"
     
-@app.route('/stores/proximity/lat=<lat>&lng=<lng>', methods=['GET'])
-def get_stores_by_proximity(lat, lng):
+#@app.route('/stores/proximity/lat=<lat>&lng=<lng>', methods=['GET'])
+#def get_stores_by_proximity(lat, lng):
+#    user_key = request.headers.get('Authorization')
+#    test = check_for_key(user_key)
+#    
+#    if test:
+#        return get_stores_by_procimity(lat, lng)
+#    else:
+#        return "Unathorized Access"
+    #lat=59.9333&lng=10.7166
+
+@app.route('/stores/proximity/lat=<lat>&lng=<lng>&km=<km>', methods=['GET'])
+def get_stores_by_proximity(lat, lng, km):
     user_key = request.headers.get('Authorization')
     test = check_for_key(user_key)
     
     if test:
-        return get_stores_by_procimity(lat, lng)
+        return get_stores_by_procimity(lat, lng, km)
     else:
         return "Unathorized Access"
-    #lat=59.9333&lng=10.7166
+
 
 # http://127.0.0.1:5000/
 # http://127.0.0.1:5000/products

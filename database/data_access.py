@@ -82,7 +82,7 @@ def compare_stores(ean, query):
     insert_prices(ean)
     queries = query.split("+")
     test_que = [ "Meny","KIWI"]
-    
+    print(query)
     stores = ""
     for  i in range(0,len(test_que)):
         if i > 0:
@@ -99,7 +99,7 @@ def compare_stores(ean, query):
         
 
     combined_list.sort(key=lambda x: x[1], reverse=False)    
-    
+    print(combined_list)
     return combined_list
 
 def insert_prices(ean):
