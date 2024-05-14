@@ -9,6 +9,7 @@ from flask_cors import CORS
 from uuid import uuid4
 
 from api.get_stores_close_by import get_stores_by_procimity
+from price_comparison import price_comparison
 
 try:
     products = get_products()
@@ -90,24 +91,13 @@ def get_product_prices(ean):
     if test:
         the_price_list = fetch_prices(ean)
         
-        rows = []
-        for row in the_price_list:
-            store_price = {
-                "ean": row[0],
-                "store" : row[1],
-                "price" : row[2],
-                "created_at": row[3],
-                "updated_at": row[4],
-            }
-            rows.append(store_price)
-        
-        price_list = {
-            "store_prices": rows
-        }
+        price_list = price_comparison(the_price_list)
         
         return price_list
     else:
         return "Unathorized Access"
+
+
 
 @app.route('/product/price/<ean>search_query=<query>', methods=['GET'])
 def compare_store_prices(ean, query):
@@ -117,37 +107,14 @@ def compare_store_prices(ean, query):
     
     stores = compare_stores(ean, query)
     
-    rows = []
-    for row in stores:
-        store_price = {
-            "ean": row[0],
-            "store" : row[1],
-            "price" : row[2],
-            "created_at": row[3],
-            "updated_at": row[4],
-        }
-        rows.append(store_price)
-        
-    store_list = {
-        "store_prices": rows
-    }
+    store_list = price_comparison(stores)
+    
     
     if test:
         return store_list
     else:
         return "Unathorized Access"
     
-#@app.route('/stores/proximity/lat=<lat>&lng=<lng>', methods=['GET'])
-#def get_stores_by_proximity(lat, lng):
-#    user_key = request.headers.get('Authorization')
-#    test = check_for_key(user_key)
-#    
-#    if test:
-#        return get_stores_by_procimity(lat, lng)
-#    else:
-#        return "Unathorized Access"
-    #lat=59.9333&lng=10.7166
-
 @app.route('/stores/proximity/lat=<lat>&lng=<lng>&km=<km>', methods=['GET'])
 def get_stores_by_proximity(lat, lng, km):
     user_key = request.headers.get('Authorization')
