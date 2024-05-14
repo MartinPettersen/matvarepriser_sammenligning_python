@@ -97,9 +97,10 @@ def compare_stores(ean, query):
         test = res.fetchall()
         combined_list += test
         
-
-    combined_list.sort(key=lambda x: x[1], reverse=False)    
+        
     print(combined_list)
+    #combined_list.sort(key=lambda x: x[1], reverse=False)    
+    #print(combined_list)
     return combined_list
 
 def insert_prices(ean):
