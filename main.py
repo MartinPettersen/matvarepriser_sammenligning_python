@@ -3,13 +3,15 @@ from api.get_api_data import get_products
 from api.get_products_with_ean import get_products_with_ean
 from api.get_products_with_id import get_products_with_id
 from api.get_price_data import get_price_data
-from database.data_access import check_for_key, compare_stores, create_database, fetch_product, insert_key, insert_products, fetch_products, fetch_prices
+from database.data_access import check_for_key, compare_stores, create_database, create_user_table, fetch_product, fetch_user, insert_key, insert_products, fetch_products, fetch_prices, insert_user
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from uuid import uuid4
 
 from api.get_stores_close_by import get_stores_by_procimity
 from price_comparison import price_comparison
+
+create_user_table()
 
 try:
     products = get_products()
@@ -126,12 +128,50 @@ def get_stores_by_proximity(lat, lng, km):
         return "Unathorized Access"
 
 
+@app.route('/api/createuser', methods=['POST'])
+def create_user():
+    data = request.json
+    password = data.get("password")
+    email = data.get("email")
+    name = data.get("name")
+    id = data.get("id")
+    
+    print(f"i recieved {email} and {password}")
+
+    insert_user(id, name, email, password)
+
+    return jsonify({'message': f"you sent {email} and {password}"})
+
+
+@app.route('/api/getuser', methods=['POST'])
+def get_user():
+    data = request.json
+    email = data.get("email")
+    print("trying to get user")
+    print(f"the email {email}")
+    user = fetch_user(email)
+    print(user)
+        
+    user_data = {
+        "id": user[0][0],
+        "name": user[0][1],
+        "email": user[0][2],
+        "password": user[0][3],
+        "created_at": user[0][4],
+        "updated_at": user[0][5],
+    }
+    return jsonify({'message': user_data})
+
+
 # http://127.0.0.1:5000/
 # http://127.0.0.1:5000/products
 # http://127.0.0.1:5000/product/price/7035620025037
 # http://127.0.0.1:5000/product/price/7035620025037search_query=KIWI+Joker
 # http://127.0.0.1:5000/stores/proximity/lat=63.4308&lng=10.4034
 
+
+
 if __name__ == '__main__':
     app.run()
+    #app.run(ssl_context='adhoc')
     pass

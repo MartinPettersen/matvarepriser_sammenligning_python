@@ -14,6 +14,7 @@ def create_database():
     cursor.execute("DROP TABLE IF EXISTS pricelist")
     cursor.execute("CREATE TABLE pricelist(ean, store, price, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
     cursor.execute("CREATE TABLE keyslist(key, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
+    cursor.execute("CREATE TABLE userdata(id type UNIQUE, name, email type UNIQUE, password, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
 
 def insert_products(id, ean, name, description, category, brand, image):
     
@@ -51,7 +52,28 @@ def insert_products(id, ean, name, description, category, brand, image):
     #time = test_time.fetchall()
     #print(time)
     #print(f"is was created at {time}")
+
+def create_user_table():
+    cursor.execute("DROP TABLE IF EXISTS userdata")
     
+    cursor.execute("CREATE TABLE userdata(id type UNIQUE, name, email type UNIQUE, password, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
+  
+def insert_user(id, name, email, password):
+    try:
+        cursor.execute('INSERT INTO userdata VALUES (?,?,?,?, current_timestamp, current_timestamp)',(id, name, email, password,))
+        connection.commit()
+
+    except sqlite3.DatabaseError as e:
+        print(f"Database error: {e}")
+        
+    res = cursor.execute("SELECT * FROM userdata WHERE email = ?", (email,))
+    test = res.fetchall()
+    print(test)
+
+def fetch_user(email):
+    res = cursor.execute("SELECT * FROM userdata WHERE email = ?", (email,))
+    test = res.fetchall()
+    return test
 
 def fetch_products():
     res = cursor.execute("SELECT * FROM product")
