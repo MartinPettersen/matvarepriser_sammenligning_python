@@ -12,9 +12,12 @@ def create_database():
 
     cursor.execute("CREATE TABLE product(id, ean, name, description, category JSON, brand, image,created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
     cursor.execute("DROP TABLE IF EXISTS pricelist")
+    cursor.execute("DROP TABLE IF EXISTS userfavourites")
+    
     cursor.execute("CREATE TABLE pricelist(ean, store, price, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
     cursor.execute("CREATE TABLE keyslist(key, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
     cursor.execute("CREATE TABLE userdata(id type UNIQUE, name, email type UNIQUE, password, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
+    cursor.execute("CREATE TABLE userfavourites(user_id, product_id, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
 
 def insert_products(id, ean, name, description, category, brand, image):
     
@@ -54,9 +57,12 @@ def insert_products(id, ean, name, description, category, brand, image):
     #print(f"is was created at {time}")
 
 def create_user_table():
-    cursor.execute("DROP TABLE IF EXISTS userdata")
+    #cursor.execute("DROP TABLE IF EXISTS userdata")
+    #cursor.execute("CREATE TABLE userdata(id type UNIQUE, name, email type UNIQUE, password, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
     
-    cursor.execute("CREATE TABLE userdata(id type UNIQUE, name, email type UNIQUE, password, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
+    cursor.execute("DROP TABLE IF EXISTS userfavourites")
+    
+    cursor.execute("CREATE TABLE userfavourites(user_id, product_id, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
   
 def insert_user(id, name, email, password):
     try:
@@ -75,6 +81,31 @@ def fetch_user(email):
     test = res.fetchall()
     return test
 
+def insert_userfavourites(user_id, product_ean):
+    try:
+        cursor.execute('INSERT INTO userfavourites VALUES (?,?, current_timestamp, current_timestamp)',(user_id, product_ean,))
+        connection.commit()
+
+    except sqlite3.DatabaseError as e:
+        print(f"Database error: {e}")
+        
+    res = cursor.execute("SELECT * FROM userfavourites WHERE user_id = ?", (user_id,))
+    test = res.fetchall()
+    print(test)
+
+def fetch_userfavourites(user_id):
+    res = cursor.execute("SELECT * FROM userfavourites WHERE user_id = ?", (user_id,))
+    test = res.fetchall()
+    return test
+
+
+def check_if_favourite(user_id, product_ean):
+    res = cursor.execute("SELECT * FROM userfavourites WHERE user_id = ? AND product_ean = ?", (user_id, product_ean,))
+    test = res.fetchall()
+    #print(test)
+    return len(test) != 0    
+
+
 def fetch_products():
     res = cursor.execute("SELECT * FROM product")
     test = res.fetchall()
@@ -90,6 +121,8 @@ def fetch_product(id):
     #print(test[0][1])
     # id, ean, name, description, category JSON, brand, image,created_at
     return test
+
+
 
 def fetch_prices(ean):
     insert_prices(ean)
@@ -183,3 +216,6 @@ def check_for_key(user_key):
     test = res.fetchall()
     #print(test)
     return len(test) != 0    
+
+
+

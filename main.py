@@ -3,7 +3,7 @@ from api.get_api_data import get_products
 from api.get_products_with_ean import get_products_with_ean
 from api.get_products_with_id import get_products_with_id
 from api.get_price_data import get_price_data
-from database.data_access import check_for_key, compare_stores, create_database, create_user_table, fetch_product, fetch_user, insert_key, insert_products, fetch_products, fetch_prices, insert_user
+from database.data_access import check_for_key, compare_stores, create_database, create_user_table, fetch_product, fetch_user, fetch_userfavourites, insert_key, insert_products, fetch_products, fetch_prices, insert_user, insert_userfavourites
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from uuid import uuid4
@@ -51,6 +51,27 @@ def get_product_by_id(id):
                 "updated_at": product_data[0][8],        
             }
     return product
+
+
+@app.route('/api/favourite', methods=['POST'])
+def insert_favourite_product():
+    data = request.json
+    user_id = data.get("user_id")
+    product_ean = data.get("product_ean")
+    insert_userfavourites(user_id, product_ean)
+
+@app.route('/api/checkfavourite', methods=['POST'])
+def check_if_favourite():
+    data = request.json
+    user_id = data.get("user_id")
+    product_ean = data.get("product_ean")
+    check_if_favourite(user_id, product_ean)
+
+@app.route('/api/getfavourites', methods=['POST'])
+def get_user_favourites():
+    data = request.json
+    user_id = data.get("user_id")
+    fetch_userfavourites(user_id)
 
 @app.route('/products', methods=['GET'])
 def get_products():
@@ -160,7 +181,8 @@ def get_user():
         "created_at": user[0][4],
         "updated_at": user[0][5],
     }
-    return jsonify({'message': user_data})
+    print(user_data)
+    return jsonify({'user': user_data})
 
 
 # http://127.0.0.1:5000/
