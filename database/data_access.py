@@ -12,8 +12,6 @@ def create_database():
 
     cursor.execute("CREATE TABLE product(id, ean, name, description, category JSON, brand, image,created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
     cursor.execute("DROP TABLE IF EXISTS pricelist")
-    cursor.execute("DROP TABLE IF EXISTS userfavourites")
-    
     cursor.execute("CREATE TABLE pricelist(ean, store, price, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
     cursor.execute("CREATE TABLE keyslist(key, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
     cursor.execute("CREATE TABLE userdata(id type UNIQUE, name, email type UNIQUE, password, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
@@ -81,30 +79,22 @@ def fetch_user(email):
     test = res.fetchall()
     return test
 
-def insert_userfavourites(user_id, product_ean):
+def insert_userfavourites(id, product_id):
     try:
-        cursor.execute('INSERT INTO userfavourites VALUES (?,?, current_timestamp, current_timestamp)',(user_id, product_ean,))
+        cursor.execute('INSERT INTO userfavourites VALUES (?,?, current_timestamp, current_timestamp)',(id, product_id,))
         connection.commit()
 
     except sqlite3.DatabaseError as e:
         print(f"Database error: {e}")
         
-    res = cursor.execute("SELECT * FROM userfavourites WHERE user_id = ?", (user_id,))
+    res = cursor.execute("SELECT * FROM userfavourites WHERE id = ?", (id,))
     test = res.fetchall()
     print(test)
 
-def fetch_userfavourites(user_id):
-    res = cursor.execute("SELECT * FROM userfavourites WHERE user_id = ?", (user_id,))
+def fetch_userfavourites(id):
+    res = cursor.execute("SELECT * FROM userfavourites WHERE user_id = ?", (id,))
     test = res.fetchall()
     return test
-
-
-def check_if_favourite(user_id, product_ean):
-    res = cursor.execute("SELECT * FROM userfavourites WHERE user_id = ? AND product_ean = ?", (user_id, product_ean,))
-    test = res.fetchall()
-    #print(test)
-    return len(test) != 0    
-
 
 def fetch_products():
     res = cursor.execute("SELECT * FROM product")
@@ -122,24 +112,24 @@ def fetch_product(id):
     # id, ean, name, description, category JSON, brand, image,created_at
     return test
 
-
-
 def fetch_prices(ean):
     insert_prices(ean)
     try:
         res = cursor.execute("SELECT * FROM pricelist WHERE ean = ? ORDER BY price ASC", (ean,))
         test = res.fetchall()
+        print("prices that are fetched")
+        print(test)
         return test
     except:     
         return "Could not fetch prices"    
         
 def compare_stores(ean, query):
-    insert_prices(ean)
     queries = query.split("+")
     test_que = [ "Meny","KIWI"]
-    print(query)
+    print("we compare")
+    print(queries)
     stores = ""
-    for  i in range(0,len(test_que)):
+    for  i in range(0,len(queries)):
         if i > 0:
             stores += f"OR store = ? "
         else:
@@ -147,12 +137,17 @@ def compare_stores(ean, query):
             
     combined_list = []
     
+    print("stores string is")
+    print(stores)
+    
     for store in queries:
         res = cursor.execute(f"SELECT * FROM pricelist WHERE ean = ? AND store = ?  ORDER BY price ASC", (ean, store))
         test = res.fetchall()
+        print(f"for {store} we got")
+        print(test)
         combined_list += test
         
-        
+    print("the combined list is")
     print(combined_list)
     #combined_list.sort(key=lambda x: x[1], reverse=False)    
     #print(combined_list)
@@ -167,7 +162,8 @@ def insert_prices(ean):
     
         if not exists:
             store_prices = get_price_data(ean)
-           
+            print("get price data")
+            print(store_prices)
             if store_prices != "no data":
                 json_object = json.dumps(store_prices, indent=4)
                 with open("sample.json", "w") as outfile:
@@ -183,6 +179,8 @@ def insert_prices(ean):
         else:
             res = cursor.execute("SELECT * FROM pricelist ORDER BY created_at DESC")
             test = res.fetchall()
+            print("price data exists")
+            print(test)
             #print("--------")
             #print(test[0][3])
             current_time = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
@@ -216,6 +214,3 @@ def check_for_key(user_key):
     test = res.fetchall()
     #print(test)
     return len(test) != 0    
-
-
-

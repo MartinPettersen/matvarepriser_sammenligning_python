@@ -1,6 +1,7 @@
 def price_comparison(price_list):
     rows = []
-    
+    print("pricelist")
+    print(price_list)
     placement = 1
     latest_price = price_list[0][2]
     cheapest = price_list[0][2]
