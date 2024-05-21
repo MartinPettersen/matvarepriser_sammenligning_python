@@ -3,7 +3,7 @@ from api.get_api_data import get_products
 from api.get_products_with_ean import get_products_with_ean
 from api.get_products_with_id import get_products_with_id
 from api.get_price_data import get_price_data
-from database.data_access import check_for_key, compare_stores, create_database, create_user_table, fetch_product, fetch_user, insert_key, insert_products, fetch_products, fetch_prices, insert_user
+from database.data_access import check_for_favourite, check_for_key, compare_stores, create_database, create_user_table, delete_userfavourites, fetch_product, fetch_user, fetch_userfavourites, insert_key, insert_products, fetch_products, fetch_prices, insert_user, insert_userfavourites
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from uuid import uuid4
@@ -143,6 +143,43 @@ def create_user():
 
     return jsonify({'message': f"you sent {email} and {password}"})
 
+
+@app.route('/api/insertuserfavourites', methods=['POST'])
+def insert_user_favourites():
+    data = request.json
+    product_id = data.get("product_id")
+    id = data.get("id")
+
+    status = insert_userfavourites(id, product_id)
+    return {"status": status}
+
+@app.route('/api/deleteuserfavourites', methods=['POST'])
+def delete_user_favourites():
+    print("deleteing")
+    data = request.json
+    product_id = data.get("product_id")
+    id = data.get("id")
+
+    status = delete_userfavourites(id, product_id)
+    return {"status": status}
+
+@app.route('/api/getuserfavourites', methods=['POST'])
+def get_user_favourites():
+    data = request.json
+    id = data.get("id")
+    return fetch_userfavourites(id)
+
+@app.route('/api/checkuserfavourites', methods=['POST'])
+def check_if_user_favourite():
+    data = request.json
+    product_id = data.get("product_id")
+    id = data.get("id")
+    print("checking user favourite")
+    res = str(check_for_favourite(id, product_id))
+    print(res)
+    response = {"message": res}
+    print(response)
+    return response
 
 @app.route('/api/getuser', methods=['POST'])
 def get_user():

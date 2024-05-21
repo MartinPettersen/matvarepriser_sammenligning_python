@@ -12,6 +12,7 @@ def create_database():
 
     cursor.execute("CREATE TABLE product(id, ean, name, description, category JSON, brand, image,created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
     cursor.execute("DROP TABLE IF EXISTS pricelist")
+    cursor.execute("DROP TABLE IF EXISTS userfavourites")
     cursor.execute("CREATE TABLE pricelist(ean, store, price, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
     cursor.execute("CREATE TABLE keyslist(key, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
     cursor.execute("CREATE TABLE userdata(id type UNIQUE, name, email type UNIQUE, password, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
@@ -87,14 +88,30 @@ def insert_userfavourites(id, product_id):
     except sqlite3.DatabaseError as e:
         print(f"Database error: {e}")
         
-    res = cursor.execute("SELECT * FROM userfavourites WHERE id = ?", (id,))
+    res = cursor.execute("SELECT * FROM userfavourites WHERE user_id = ?", (id,))
     test = res.fetchall()
     print(test)
+    return check_for_favourite(id, product_id)
 
+def delete_userfavourites(id, product_id):
+    try:
+        cursor.execute('DELETE FROM userfavourites WHERE user_id = ? AND product_id = ?',(id, product_id,))
+        connection.commit()
+        return "deleted"
+
+    except sqlite3.DatabaseError as e:
+        print(f"Database error: {e}")
+        
 def fetch_userfavourites(id):
     res = cursor.execute("SELECT * FROM userfavourites WHERE user_id = ?", (id,))
     test = res.fetchall()
     return test
+
+def check_for_favourite(id, product_id):
+    res = cursor.execute("SELECT * FROM userfavourites WHERE user_id = ? AND product_id = ?", (id, product_id,))
+    test = res.fetchall()
+    print(test)
+    return len(test) != 0
 
 def fetch_products():
     res = cursor.execute("SELECT * FROM product")
