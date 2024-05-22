@@ -38,7 +38,7 @@ def hello_new_user():
 @app.route('/product/<id>')
 def get_product_by_id(id):
     product_data = fetch_product(id)
-    #print(f"the product is {product_data}")
+    print("the product")
     product = {
                 "id": product_data[0][0],
                 "ean": product_data[0][1],
@@ -50,17 +50,18 @@ def get_product_by_id(id):
                 "created_at": product_data[0][7],        
                 "updated_at": product_data[0][8],        
             }
+    print(product)
+    
     return product
 
 @app.route('/products', methods=['GET'])
 def get_products():
     user_key = request.headers.get('Authorization')
     test = check_for_key(user_key)
-    
+    test = True
     if test:
         produkter = fetch_products()    
-        # print(produkter)
-        
+        print(produkter)    
         rows = []
     
         for row in produkter:
@@ -89,10 +90,11 @@ def get_products():
 def get_product_prices(ean):
     user_key = request.headers.get('Authorization')
     test = check_for_key(user_key)
-    
+    test = True
     if test:
         the_price_list = fetch_prices(ean)
-        
+        print("the price list in get product prices")
+        print(the_price_list)
         price_list = price_comparison(the_price_list)
         
         return price_list
@@ -105,12 +107,14 @@ def get_product_prices(ean):
 def compare_store_prices(ean, query):
     user_key = request.headers.get('Authorization')
     test = check_for_key(user_key)
-    print(query)
+    test = True
     fetch_prices(ean)
     
     stores = compare_stores(ean, query)
-    
-    store_list = price_comparison(stores)
+    print("stores in compare_store_prices ")
+    print(stores)
+    if (len(stores) > 1):
+        store_list = price_comparison(stores)
     
     
     if test:
@@ -121,10 +125,11 @@ def compare_store_prices(ean, query):
 @app.route('/stores/proximity/lat=<lat>&lng=<lng>&km=<km>', methods=['GET'])
 def get_stores_by_proximity(lat, lng, km):
     user_key = request.headers.get('Authorization')
-    test = check_for_key(user_key)
-    
+    #test = check_for_key(user_key)
+    test = True
     if test:
-        return get_stores_by_procimity(lat, lng, km)
+        stores = get_stores_by_procimity(lat, lng, km)
+        return stores
     else:
         return "Unathorized Access"
 
@@ -137,7 +142,6 @@ def create_user():
     name = data.get("name")
     id = data.get("id")
     
-    print(f"i recieved {email} and {password}")
 
     insert_user(id, name, email, password)
 
@@ -155,7 +159,6 @@ def insert_user_favourites():
 
 @app.route('/api/deleteuserfavourites', methods=['POST'])
 def delete_user_favourites():
-    print("deleteing")
     data = request.json
     product_id = data.get("product_id")
     id = data.get("id")
@@ -174,21 +177,15 @@ def check_if_user_favourite():
     data = request.json
     product_id = data.get("product_id")
     id = data.get("id")
-    print("checking user favourite")
     res = str(check_for_favourite(id, product_id))
-    print(res)
     response = {"message": res}
-    print(response)
     return response
 
 @app.route('/api/getuser', methods=['POST'])
 def get_user():
     data = request.json
     email = data.get("email")
-    print("trying to get user")
-    print(f"the email {email}")
     user = fetch_user(email)
-    print(user)
         
     user_data = {
         "id": user[0][0],

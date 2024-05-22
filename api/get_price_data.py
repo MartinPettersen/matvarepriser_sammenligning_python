@@ -18,41 +18,44 @@ def get_products_with_ean(ean):
 
 def get_price_data(ean):
 
+    print(f"get_price_data({ean})")
     products_with_same_ean = get_products_with_ean(ean)
-
-    # print(len(products_with_same_ean["data"]["products"]))
-
-    #print(products_with_same_ean["data"]["products"])
-    #print("\n\n\n\n\n\n\n")
-    #print(len(products_with_same_ean["data"]["products"]))
-
-
-    #if type(products_with_same_ean["data"]["products"]) != "NoneType":
+    print("products with the sane ean")
+    print(products_with_same_ean)
     try:    
         store_prices = []
 
         for product in products_with_same_ean["data"]["products"]:
+            print(1)
+            print("product in products with same ean")
+            print(product)
             if product["store"] is not None and product["store"]["name"] is not None:
                 store =  product["store"]["name"]
             else:
                 store = 'Mangler butikk'
-            
+            print(2)
+            print(f"the store is {store}")
             if product["current_price"] is not None:
                 current_price =  product["current_price"]
             else:
                 current_price = 'Mangler pris'
-
-            store_prices.append({ store, current_price })
+            print(f"the price is {current_price}")
+            print(3)
+            print("store prices before append")
             print(store_prices)
-        #store_prices = [{"store": product["store"]["name"] or 'Mangler butikk', "current_price": product["current_price"] or 'Mangler pris' } for product in products_with_same_ean["data"]["products"]]
-    #else:
+            store_prices.append({ "store": store, "current_price": current_price })
+            print("store prices after append")           
+            print(store_prices)
+            
+            print(4)
+            print("-----------------------------------")
+            print(store_prices)
+            print("-----------------------------------")
+            
     except:
         store_prices = []
-    #for pr in products_with_same_ean["data"]["products"]:
-    #    print(pr["name"])
     
-    #    print(pr["current_price"])
-    #    print(pr["store"]["name"])
-    
+    print("f")
+    print(store_prices)
     return store_prices
      

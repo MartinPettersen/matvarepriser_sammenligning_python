@@ -10,13 +10,13 @@ cursor = connection.cursor()
 
 def create_database():
 
-    cursor.execute("CREATE TABLE product(id, ean, name, description, category JSON, brand, image,created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
+    cursor.execute("CREATE TABLE product(id, ean, name, description, category JSON, brand, image,created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
     cursor.execute("DROP TABLE IF EXISTS pricelist")
     cursor.execute("DROP TABLE IF EXISTS userfavourites")
-    cursor.execute("CREATE TABLE pricelist(ean, store, price, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
-    cursor.execute("CREATE TABLE keyslist(key, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
-    cursor.execute("CREATE TABLE userdata(id type UNIQUE, name, email type UNIQUE, password, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
-    cursor.execute("CREATE TABLE userfavourites(user_id, product_id, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
+    cursor.execute("CREATE TABLE pricelist(ean, store, price, created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
+    cursor.execute("CREATE TABLE keyslist(key, created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
+    cursor.execute("CREATE TABLE userdata(id type UNIQUE, name, email type UNIQUE, password, created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
+    cursor.execute("CREATE TABLE userfavourites(user_id, product_id, created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
 
 def insert_products(id, ean, name, description, category, brand, image):
     
@@ -47,21 +47,16 @@ def insert_products(id, ean, name, description, category, brand, image):
     cursor.execute(f"""INSERT INTO product VALUES (?, ?, ?, ?, json(?), ?, ?, current_timestamp, current_timestamp)""", (id, ean, name, description, category_json_array, brand, image) )
     connection.commit()
 
-    #res = cursor.execute("SELECT name FROM product")
-    #test = res.fetchall()
-    #print(test)
-    #test_time = cursor.execute("SELECT created_at FROM product")
-    #time = test_time.fetchall()
-    #print(time)
-    #print(f"is was created at {time}")
 
 def create_user_table():
     #cursor.execute("DROP TABLE IF EXISTS userdata")
     #cursor.execute("CREATE TABLE userdata(id type UNIQUE, name, email type UNIQUE, password, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
+    cursor.execute("DROP TABLE IF EXISTS pricelist")
+    cursor.execute("CREATE TABLE pricelist(ean, store, price, created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
     
     cursor.execute("DROP TABLE IF EXISTS userfavourites")
     
-    cursor.execute("CREATE TABLE userfavourites(user_id, product_id, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
+    cursor.execute("CREATE TABLE userfavourites(user_id, product_id, created_at TEXT NOT NULL DEFAULT current_timestamp, updated_at TEXT NOT NULL DEFAULT current_timestamp)")
   
 def insert_user(id, name, email, password):
     try:
@@ -73,7 +68,6 @@ def insert_user(id, name, email, password):
         
     res = cursor.execute("SELECT * FROM userdata WHERE email = ?", (email,))
     test = res.fetchall()
-    print(test)
 
 def fetch_user(email):
     res = cursor.execute("SELECT * FROM userdata WHERE email = ?", (email,))
@@ -90,7 +84,6 @@ def insert_userfavourites(id, product_id):
         
     res = cursor.execute("SELECT * FROM userfavourites WHERE user_id = ?", (id,))
     test = res.fetchall()
-    print(test)
     return check_for_favourite(id, product_id)
 
 def delete_userfavourites(id, product_id):
@@ -110,41 +103,34 @@ def fetch_userfavourites(id):
 def check_for_favourite(id, product_id):
     res = cursor.execute("SELECT * FROM userfavourites WHERE user_id = ? AND product_id = ?", (id, product_id,))
     test = res.fetchall()
-    print(test)
     return len(test) != 0
 
 def fetch_products():
     res = cursor.execute("SELECT * FROM product")
     test = res.fetchall()
-    #print(test[0][1])
 
 
-    # id, ean, name, description, category JSON, brand, image,created_at
     return test
 
 def fetch_product(id):
     res = cursor.execute("SELECT * FROM product WHERE id = ?", (int(id),))
     test = res.fetchall()
-    #print(test[0][1])
-    # id, ean, name, description, category JSON, brand, image,created_at
     return test
 
 def fetch_prices(ean):
+    print(f"fetching prices for {ean}")
+    print("insert_prices in insert_prices")
     insert_prices(ean)
     try:
         res = cursor.execute("SELECT * FROM pricelist WHERE ean = ? ORDER BY price ASC", (ean,))
         test = res.fetchall()
-        print("prices that are fetched")
-        print(test)
+        print("fetching prices in fetch_prices")
         return test
     except:     
         return "Could not fetch prices"    
         
 def compare_stores(ean, query):
     queries = query.split("+")
-    test_que = [ "Meny","KIWI"]
-    print("we compare")
-    print(queries)
     stores = ""
     for  i in range(0,len(queries)):
         if i > 0:
@@ -154,64 +140,64 @@ def compare_stores(ean, query):
             
     combined_list = []
     
-    print("stores string is")
-    print(stores)
     
     for store in queries:
         res = cursor.execute(f"SELECT * FROM pricelist WHERE ean = ? AND store = ?  ORDER BY price ASC", (ean, store))
         test = res.fetchall()
-        print(f"for {store} we got")
-        print(test)
         combined_list += test
         
-    print("the combined list is")
-    print(combined_list)
-    #combined_list.sort(key=lambda x: x[1], reverse=False)    
-    #print(combined_list)
     return combined_list
 
 def insert_prices(ean):
-
+    print(f"inserting prices for {ean}")
     try:
     
         cursor.execute("SELECT 1 FROM pricelist WHERE ean = ?", (ean,))
         exists = cursor.fetchone()
     
         if not exists:
+            print("prices not exists")
             store_prices = get_price_data(ean)
-            print("get price data")
+            print("store_prices in insert prices if prices dont exists")
             print(store_prices)
             if store_prices != "no data":
                 json_object = json.dumps(store_prices, indent=4)
                 with open("sample.json", "w") as outfile:
                     outfile.write(json_object)
                 for store_price in store_prices:
-                    print("-----------------------------------------------------------------")
-                    print(store_prices)
-                    print("-----------------------------------------------------------------")
 
                     cursor.execute('INSERT INTO pricelist VALUES (?, ?, ?, current_timestamp, current_timestamp)',(ean, store_price["store"], store_price["current_price"]["price"]))
                     connection.commit()
                 
         else:
+            print("prices exists insert_prices")
+            
             res = cursor.execute("SELECT * FROM pricelist ORDER BY created_at DESC")
             test = res.fetchall()
-            print("price data exists")
             print(test)
-            #print("--------")
-            #print(test[0][3])
             current_time = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
-            #print(f"current time: {current_time}")
-            #print(f"test[0][3]: {test[0][3]}")
             
-            time_gap = (datetime.strptime(current_time, '%Y-%m-%d %H:%M:%S') - datetime.strptime(test[0][3], '%Y-%m-%d %H:%M:%S')).days
-            #print(f"this was create at: {test[0][3]}, current time is: {current_time}, the time gap is {(datetime.strptime(current_time, '%Y-%m-%d %H:%M:%S') - datetime.strptime(test[0][3], '%Y-%m-%d %H:%M:%S')).days}")
-            if time_gap > 7:
-                res = cursor.execute("DELETE FROM pricelist where ean = ? ", (ean,))
-                #print(res)
-                insert_prices(ean)
-            #print("--------")
-            
+            time_gap = (datetime.strptime(current_time, '%Y-%m-%d %H:%M:%S') - datetime.strptime(test[0][4], '%Y-%m-%d %H:%M:%S')).seconds
+            if time_gap > 70:
+                print("outdated data")
+                store_prices = get_price_data(ean)
+                print(test[0])
+                print(test[0][4])
+                
+                print(time_gap)
+                for store_price in store_prices:
+                    try:
+                        print(store_price)
+                        cursor.execute('UPDATE pricelist SET store = ?,  price = ?, updated_at = ?  WHERE ean = ? AND store = ?',(store_price["store"], store_price["current_price"]["price"],  datetime.now().strftime('%Y-%m-%d %H:%M:%S'), ean, store_price["store"]))
+                        print("test")
+                        print("Update successful. Rows affected:", cursor.rowcount)
+                        connection.commit()
+                    except Exception as e:
+                        print("An error occurred:", e)    
+                #res = cursor.execute("DELETE FROM pricelist where ean = ? ", (ean,))
+                #insert_prices(ean)
+            else:
+                print("data is current")
     except sqlite3.DatabaseError as e:
         print(f"Database error: {e}")
 
@@ -229,5 +215,4 @@ def insert_key(user_key):
 def check_for_key(user_key):
     res = cursor.execute("SELECT key FROM keyslist WHERE key = ?", (user_key,))
     test = res.fetchall()
-    #print(test)
     return len(test) != 0    
