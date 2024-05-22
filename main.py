@@ -38,7 +38,6 @@ def hello_new_user():
 @app.route('/product/<id>')
 def get_product_by_id(id):
     product_data = fetch_product(id)
-    print("the product")
     product = {
                 "id": product_data[0][0],
                 "ean": product_data[0][1],
@@ -50,7 +49,6 @@ def get_product_by_id(id):
                 "created_at": product_data[0][7],        
                 "updated_at": product_data[0][8],        
             }
-    print(product)
     
     return product
 
@@ -61,7 +59,6 @@ def get_products():
     test = True
     if test:
         produkter = fetch_products()    
-        print(produkter)    
         rows = []
     
         for row in produkter:
@@ -93,8 +90,6 @@ def get_product_prices(ean):
     test = True
     if test:
         the_price_list = fetch_prices(ean)
-        print("the price list in get product prices")
-        print(the_price_list)
         price_list = price_comparison(the_price_list)
         
         return price_list
@@ -111,8 +106,6 @@ def compare_store_prices(ean, query):
     fetch_prices(ean)
     
     stores = compare_stores(ean, query)
-    print("stores in compare_store_prices ")
-    print(stores)
     if (len(stores) > 1):
         store_list = price_comparison(stores)
     

@@ -118,13 +118,10 @@ def fetch_product(id):
     return test
 
 def fetch_prices(ean):
-    print(f"fetching prices for {ean}")
-    print("insert_prices in insert_prices")
     insert_prices(ean)
     try:
         res = cursor.execute("SELECT * FROM pricelist WHERE ean = ? ORDER BY price ASC", (ean,))
         test = res.fetchall()
-        print("fetching prices in fetch_prices")
         return test
     except:     
         return "Could not fetch prices"    
@@ -149,17 +146,13 @@ def compare_stores(ean, query):
     return combined_list
 
 def insert_prices(ean):
-    print(f"inserting prices for {ean}")
     try:
     
         cursor.execute("SELECT 1 FROM pricelist WHERE ean = ?", (ean,))
         exists = cursor.fetchone()
     
         if not exists:
-            print("prices not exists")
             store_prices = get_price_data(ean)
-            print("store_prices in insert prices if prices dont exists")
-            print(store_prices)
             if store_prices != "no data":
                 json_object = json.dumps(store_prices, indent=4)
                 with open("sample.json", "w") as outfile:
@@ -170,27 +163,18 @@ def insert_prices(ean):
                     connection.commit()
                 
         else:
-            print("prices exists insert_prices")
             
             res = cursor.execute("SELECT * FROM pricelist ORDER BY created_at DESC")
             test = res.fetchall()
-            print(test)
             current_time = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
             
             time_gap = (datetime.strptime(current_time, '%Y-%m-%d %H:%M:%S') - datetime.strptime(test[0][4], '%Y-%m-%d %H:%M:%S')).seconds
             if time_gap > 70:
-                print("outdated data")
                 store_prices = get_price_data(ean)
-                print(test[0])
-                print(test[0][4])
                 
-                print(time_gap)
                 for store_price in store_prices:
                     try:
-                        print(store_price)
                         cursor.execute('UPDATE pricelist SET store = ?,  price = ?, updated_at = ?  WHERE ean = ? AND store = ?',(store_price["store"], store_price["current_price"]["price"],  datetime.now().strftime('%Y-%m-%d %H:%M:%S'), ean, store_price["store"]))
-                        print("test")
-                        print("Update successful. Rows affected:", cursor.rowcount)
                         connection.commit()
                     except Exception as e:
                         print("An error occurred:", e)    

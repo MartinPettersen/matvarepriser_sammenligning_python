@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 import pandas
 
-NUMBER_OF_PRODUCTS = 5
+NUMBER_OF_PRODUCTS = 100
 
 load_dotenv()
 
