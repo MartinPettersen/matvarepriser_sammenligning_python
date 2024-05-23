@@ -16,7 +16,7 @@ def create_database():
     
     cursor.execute("DROP TABLE IF EXISTS pricelist")
     cursor.execute("DROP TABLE IF EXISTS userfavourites")
-    cursor.execute("CREATE TABLE pricelist(ean, store, price, created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
+    cursor.execute("CREATE TABLE pricelist(ean, store, price, price_history BLOB, created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
     cursor.execute("CREATE TABLE keyslist(key, created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
     cursor.execute("CREATE TABLE userdata(id type UNIQUE, name, email type UNIQUE, password, created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
     cursor.execute("CREATE TABLE userfavourites(user_id, product_id, created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
@@ -48,10 +48,6 @@ def insert_products(id, ean, name, description, category, brand, image):
 
     category_json_array = json.dumps(category_list)
     compressed_category = compress_text(category_json_array)
-    print("text version")
-    print(category_json_array)
-    print("compressed version")
-    print(compressed_category)
     
     cursor.execute(f"""INSERT INTO product VALUES (?, ?, ?, ?, ?, ?, ?, current_timestamp, current_timestamp)""", (id, ean, name, compressed_description, compressed_category, brand, image) )
     connection.commit()
@@ -61,7 +57,7 @@ def create_user_table():
     #cursor.execute("DROP TABLE IF EXISTS userdata")
     #cursor.execute("CREATE TABLE userdata(id type UNIQUE, name, email type UNIQUE, password, created_at TEXT NOT NULL DEFAULT current_timestamp, TEXT NOT NULL DEFAULT current_timestamp)")
     cursor.execute("DROP TABLE IF EXISTS pricelist")
-    cursor.execute("CREATE TABLE pricelist(ean, store, price, created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
+    cursor.execute("CREATE TABLE pricelist(ean, store, price, price_history BLOB, created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
     
     cursor.execute("DROP TABLE IF EXISTS userfavourites")
     
@@ -164,11 +160,13 @@ def insert_prices(ean):
             store_prices = get_price_data(ean)
             if store_prices != "no data":
                 json_object = json.dumps(store_prices, indent=4)
+                
                 with open("sample.json", "w") as outfile:
                     outfile.write(json_object)
                 for store_price in store_prices:
 
-                    cursor.execute('INSERT INTO pricelist VALUES (?, ?, ?, current_timestamp, current_timestamp)',(ean, store_price["store"], store_price["current_price"]["price"]))
+                    json_price_history = json.dumps(store_price["price_history"])
+                    cursor.execute('INSERT INTO pricelist VALUES (?, ?, ?, ?, current_timestamp, current_timestamp)',(ean, store_price["store"], store_price["current_price"]["price"], json_price_history))
                     connection.commit()
                 
         else:
@@ -183,7 +181,9 @@ def insert_prices(ean):
                 
                 for store_price in store_prices:
                     try:
-                        cursor.execute('UPDATE pricelist SET store = ?,  price = ?, updated_at = ?  WHERE ean = ? AND store = ?',(store_price["store"], store_price["current_price"]["price"],  datetime.now().strftime('%Y-%m-%d %H:%M:%S'), ean, store_price["store"]))
+                        json_price_history = json.dumps(store_price["price_history"])
+                        
+                        cursor.execute('UPDATE pricelist SET store = ?,  price = ?, updated_at = ?, price_history  WHERE ean = ? AND store = ?',(store_price["store"], store_price["current_price"]["price"], json_price_history,  datetime.now().strftime('%Y-%m-%d %H:%M:%S'), ean, store_price["store"]))
                         connection.commit()
                     except Exception as e:
                         print("An error occurred:", e)    
@@ -198,8 +198,6 @@ def insert_prices(ean):
     
 
 def insert_key(user_key):
-    
-    ko
     
     try:
         cursor.execute('INSERT INTO keyslist VALUES (?, current_timestamp, current_timestamp)',(user_key,))

@@ -61,10 +61,7 @@ def get_products():
     if test:
         produkter = fetch_products()    
         rows = []
-        print("fwfnakwj")
-        print(produkter)
         for row in produkter:
-            print(f"the comrpressed text is: {row[3]} the decompressed text is: {decompress_text(row[3])}")
             product = {
                 "id": row[0],
                 "ean": row[1],

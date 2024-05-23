@@ -23,6 +23,7 @@ def get_price_data(ean):
         store_prices = []
 
         for product in products_with_same_ean["data"]["products"]:
+            
             if product["store"] is not None and product["store"]["name"] is not None:
                 store =  product["store"]["name"]
             else:
@@ -31,7 +32,11 @@ def get_price_data(ean):
                 current_price =  product["current_price"]
             else:
                 current_price = 'Mangler pris'
-            store_prices.append({ "store": store, "current_price": current_price })        
+            if product["price_history"] is not None:
+                price_history =  product["price_history"]
+            else:
+                price_history = 'Mangler pris historie'
+            store_prices.append({ "store": store, "current_price": current_price, "price_history": price_history})        
             
     except:
         store_prices = []
