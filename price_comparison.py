@@ -1,3 +1,6 @@
+import json
+
+
 def price_comparison(price_list):
     rows = []
     placement = 1
@@ -21,7 +24,7 @@ def price_comparison(price_list):
             "ean": row[0],
             "store" : row[1],
             "price" : row[2],
-            "price_history": row[3],
+            "price_history": json.loads(row[3]),
             "created_at": row[4],
             "updated_at": row[5],
             "ranking": placement,
