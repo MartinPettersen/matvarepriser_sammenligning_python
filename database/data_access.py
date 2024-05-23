@@ -3,6 +3,7 @@ import json
 from datetime import datetime
 
 from api.get_price_data import get_price_data
+from utils.compress import compress_text
 
 connection = sqlite3.connect("matvarepriser.db",check_same_thread=False)
 
@@ -10,7 +11,9 @@ cursor = connection.cursor()
 
 def create_database():
 
-    cursor.execute("CREATE TABLE product(id, ean, name, description, category JSON, brand, image,created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
+    cursor.execute("CREATE TABLE product(id, ean, name, description BLOB, category JSON, brand, image,created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
+    cursor.execute("CREATE TABLE product2(id, ean, name, description BLOB, category JSON, brand, image BLOB,created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
+    
     cursor.execute("DROP TABLE IF EXISTS pricelist")
     cursor.execute("DROP TABLE IF EXISTS userfavourites")
     cursor.execute("CREATE TABLE pricelist(ean, store, price, created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
@@ -19,6 +22,8 @@ def create_database():
     cursor.execute("CREATE TABLE userfavourites(user_id, product_id, created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
 
 def insert_products(id, ean, name, description, category, brand, image):
+    
+    compressed_description = compress_text(description)
     
     cursor.execute("DROP TABLE IF EXISTS temp_category")
     cursor.execute("CREATE TEMP TABLE temp_category (id INT, depth INT, name TEXT)")
@@ -44,7 +49,7 @@ def insert_products(id, ean, name, description, category, brand, image):
     category_json_array = json.dumps(category_list)
 
     
-    cursor.execute(f"""INSERT INTO product VALUES (?, ?, ?, ?, json(?), ?, ?, current_timestamp, current_timestamp)""", (id, ean, name, description, category_json_array, brand, image) )
+    cursor.execute(f"""INSERT INTO product VALUES (?, ?, ?, ?, json(?), ?, ?, current_timestamp, current_timestamp)""", (id, ean, name, compressed_description, category_json_array, brand, image) )
     connection.commit()
 
 
@@ -189,6 +194,9 @@ def insert_prices(ean):
     
 
 def insert_key(user_key):
+    
+    ko
+    
     try:
         cursor.execute('INSERT INTO keyslist VALUES (?, current_timestamp, current_timestamp)',(user_key,))
         connection.commit()

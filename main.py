@@ -10,6 +10,7 @@ from uuid import uuid4
 
 from api.get_stores_close_by import get_stores_by_procimity
 from price_comparison import price_comparison
+from utils.compress import decompress_text
 
 create_user_table()
 
@@ -33,7 +34,7 @@ CORS(app)
 def hello_new_user():
     new_key = str(uuid4())
     insert_key(new_key)
-    return f'This is a simple API ment to be practice, your user key is: {new_key}'
+    return f'This is a simple API meant to be practice, your user key is: {new_key}'
 
 @app.route('/product/<id>')
 def get_product_by_id(id):
@@ -42,7 +43,7 @@ def get_product_by_id(id):
                 "id": product_data[0][0],
                 "ean": product_data[0][1],
                 "name": product_data[0][2],        
-                "description": product_data[0][3],
+                "description": decompress_text(product_data[0][3]),
                 "category": product_data[0][4],
                 "brand": product_data[0][5],
                 "image": product_data[0][6],
@@ -62,11 +63,12 @@ def get_products():
         rows = []
     
         for row in produkter:
+            print(f"the comrpressed text is: {row[3]} the decompressed text is: {decompress_text(row[3])}")
             product = {
                 "id": row[0],
                 "ean": row[1],
                 "name": row[2],        
-                "description": row[3],
+                "description": decompress_text(row[3]),
                 "category": row[4],
                 "brand": row[5],
                 "image": row[6],
