@@ -11,7 +11,7 @@ cursor = connection.cursor()
 
 def create_database():
 
-    cursor.execute("CREATE TABLE product(id, ean, name, description BLOB, category JSON, brand, image,created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
+    cursor.execute("CREATE TABLE product(id, ean, name, description BLOB, category BLOB, brand, image,created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
     cursor.execute("CREATE TABLE product2(id, ean, name, description BLOB, category JSON, brand, image BLOB,created_at TEXT NOT NULL DEFAULT current_timestamp,updated_at TEXT NOT NULL DEFAULT current_timestamp)")
     
     cursor.execute("DROP TABLE IF EXISTS pricelist")
@@ -47,9 +47,13 @@ def insert_products(id, ean, name, description, category, brand, image):
             category_list.append(category_dict)
 
     category_json_array = json.dumps(category_list)
-
+    compressed_category = compress_text(category_json_array)
+    print("text version")
+    print(category_json_array)
+    print("compressed version")
+    print(compressed_category)
     
-    cursor.execute(f"""INSERT INTO product VALUES (?, ?, ?, ?, json(?), ?, ?, current_timestamp, current_timestamp)""", (id, ean, name, compressed_description, category_json_array, brand, image) )
+    cursor.execute(f"""INSERT INTO product VALUES (?, ?, ?, ?, ?, ?, ?, current_timestamp, current_timestamp)""", (id, ean, name, compressed_description, compressed_category, brand, image) )
     connection.commit()
 
 

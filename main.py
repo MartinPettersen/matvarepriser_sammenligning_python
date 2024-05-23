@@ -44,7 +44,7 @@ def get_product_by_id(id):
                 "ean": product_data[0][1],
                 "name": product_data[0][2],        
                 "description": decompress_text(product_data[0][3]),
-                "category": product_data[0][4],
+                "category": decompress_text(product_data[0][4]),
                 "brand": product_data[0][5],
                 "image": product_data[0][6],
                 "created_at": product_data[0][7],        
@@ -61,7 +61,8 @@ def get_products():
     if test:
         produkter = fetch_products()    
         rows = []
-    
+        print("fwfnakwj")
+        print(produkter)
         for row in produkter:
             print(f"the comrpressed text is: {row[3]} the decompressed text is: {decompress_text(row[3])}")
             product = {
@@ -69,7 +70,7 @@ def get_products():
                 "ean": row[1],
                 "name": row[2],        
                 "description": decompress_text(row[3]),
-                "category": row[4],
+                "category": decompress_text(row[4]),
                 "brand": row[5],
                 "image": row[6],
                 "created_at": row[7],        
