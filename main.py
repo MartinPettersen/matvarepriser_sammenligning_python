@@ -90,6 +90,7 @@ def get_product_prices(ean):
     test = True
     if test:
         the_price_list = fetch_prices(ean)
+        print(f"\ncalling price_comparison from get_product_prices:\nthe list is:\n{the_price_list}")
         price_list = price_comparison(the_price_list)
         
         return price_list
@@ -107,6 +108,7 @@ def compare_store_prices(ean, query):
     
     stores = compare_stores(ean, query)
     if (len(stores) > 1):
+        print(f"\ncalling price comparison from compare_store_prices:\nthe list is:\n{stores}")
         store_list = price_comparison(stores)
     
     
