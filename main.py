@@ -57,7 +57,6 @@ def get_product_by_id(id):
 def get_products():
     user_key = request.headers.get('Authorization')
     test = check_for_key(user_key)
-    test = True
     if test:
         produkter = fetch_products()    
         rows = []
@@ -87,7 +86,6 @@ def get_products():
 def get_product_prices(ean):
     user_key = request.headers.get('Authorization')
     test = check_for_key(user_key)
-    test = True
     if test:
         the_price_list = fetch_prices(ean)
         print(f"\ncalling price_comparison from get_product_prices:\nthe list is:\n{the_price_list}")
@@ -103,7 +101,6 @@ def get_product_prices(ean):
 def compare_store_prices(ean, query):
     user_key = request.headers.get('Authorization')
     test = check_for_key(user_key)
-    test = True
     fetch_prices(ean)
     
     stores = compare_stores(ean, query)
@@ -120,8 +117,7 @@ def compare_store_prices(ean, query):
 @app.route('/stores/proximity/lat=<lat>&lng=<lng>&km=<km>', methods=['GET'])
 def get_stores_by_proximity(lat, lng, km):
     user_key = request.headers.get('Authorization')
-    #test = check_for_key(user_key)
-    test = True
+    test = check_for_key(user_key)
     if test:
         stores = get_stores_by_procimity(lat, lng, km)
         return stores

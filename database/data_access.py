@@ -227,10 +227,9 @@ def insert_prices(ean):
             test = res.fetchall()
             current_time = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
             
-            time_gap = (datetime.strptime(current_time, '%Y-%m-%d %H:%M:%S') - datetime.strptime(test[0][4], '%Y-%m-%d %H:%M:%S')).seconds
-            #time_gap = (datetime.strptime(current_time, '%Y-%m-%d %H:%M:%S') - datetime.strptime(test[0][5], '%Y-%m-%d %H:%M:%S')).seconds
+            time_gap = (datetime.strptime(current_time, '%Y-%m-%d %H:%M:%S') - datetime.strptime(test[0][4], '%Y-%m-%d %H:%M:%S')).days
 
-            if time_gap > 70:
+            if time_gap > 7:
                 store_prices = get_price_data(ean)
                 json_object = json.dumps(store_prices, indent=4)
                 
@@ -245,8 +244,6 @@ def insert_prices(ean):
                             connection.commit()
                     except Exception as e:
                         print("An error occurred:", e)    
-                #res = cursor.execute("DELETE FROM pricelist where ean = ? ", (ean,))
-                #insert_prices(ean)
             else:
                 print("data is current")
     except sqlite3.DatabaseError as e:
