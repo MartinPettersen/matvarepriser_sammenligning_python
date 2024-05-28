@@ -237,7 +237,6 @@ def insert_prices(ean):
                     outfile.write(json_object)
                 for store_price in store_prices:
                     try:
-                        print(len(store_price["price_history"]))
                         json_price_history = json.dumps(store_price["price_history"])
                         if store_price["current_price"] is not None:
                             cursor.execute('UPDATE pricelist SET store = ?,  price = ?, price_history = ?, updated_at = ?  WHERE ean = ? AND store = ?',(store_price["store"], store_price["current_price"]["price"], json_price_history,  datetime.now().strftime('%Y-%m-%d %H:%M:%S'), ean, store_price["store"]))

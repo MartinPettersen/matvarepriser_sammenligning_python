@@ -3,7 +3,6 @@ import json
 
 def price_comparison(price_list):
     
-    #print(f"\n\n\nthe price_list in price comparison: {price_list}")
     rows = []
     placement = 1
     latest_price = price_list[0][2]
@@ -12,7 +11,6 @@ def price_comparison(price_list):
     combined = 0
     
     for row in price_list:
-        print(f"\n\npricelist row[3]: {row[3]}\n\n")
         
         if row[2] != latest_price:
             placement += 1

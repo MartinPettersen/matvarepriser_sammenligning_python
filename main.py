@@ -88,13 +88,11 @@ def get_product_prices(ean):
     test = check_for_key(user_key)
     if test:
         the_price_list = fetch_prices(ean)
-        print(f"\ncalling price_comparison from get_product_prices:\nthe list is:\n{the_price_list}")
         price_list = price_comparison(the_price_list)
         
         return price_list
     else:
         return "Unathorized Access"
-
 
 
 @app.route('/product/price/<ean>search_query=<query>', methods=['GET'])
@@ -105,7 +103,6 @@ def compare_store_prices(ean, query):
     
     stores = compare_stores(ean, query)
     if (len(stores) > 1):
-        print(f"\ncalling price comparison from compare_store_prices:\nthe list is:\n{stores}")
         store_list = price_comparison(stores)
     
     
@@ -127,66 +124,121 @@ def get_stores_by_proximity(lat, lng, km):
 
 @app.route('/api/createuser', methods=['POST'])
 def create_user():
-    data = request.json
-    password = data.get("password")
-    email = data.get("email")
-    name = data.get("name")
-    id = data.get("id")
+    user_key = request.headers.get('Authorization')
+    test = check_for_key(user_key)
     
+    if test:
+        data = request.json
+        password = data.get("password")
+        email = data.get("email")
+        name = data.get("name")
+        id = data.get("id")
 
-    insert_user(id, name, email, password)
+        insert_user(id, name, email, password)
+        return jsonify({'message': f"you sent {email} and {password}"})
 
-    return jsonify({'message': f"you sent {email} and {password}"})
+    else:
+        return "Unathorized Access"
 
 
 @app.route('/api/insertuserfavourites', methods=['POST'])
 def insert_user_favourites():
-    data = request.json
-    product_id = data.get("product_id")
-    id = data.get("id")
+    user_key = request.headers.get('Authorization')
+    test = check_for_key(user_key)
+    if test:
+        data = request.json
+        product_id = data.get("product_id")
+        id = data.get("id")
 
-    status = insert_userfavourites(id, product_id)
-    return {"status": status}
+        status = insert_userfavourites(id, product_id)
+        return {"status": status}
+
+    else:
+        return "Unathorized Access"
+
 
 @app.route('/api/deleteuserfavourites', methods=['POST'])
 def delete_user_favourites():
-    data = request.json
-    product_id = data.get("product_id")
-    id = data.get("id")
+    user_key = request.headers.get('Authorization')
+    test = check_for_key(user_key)
+    if test:
+        data = request.json
+        product_id = data.get("product_id")
+        id = data.get("id")
 
-    status = delete_userfavourites(id, product_id)
-    return {"status": status}
+        status = delete_userfavourites(id, product_id)
+        return {"status": status}
+    else:
+        return "Unathorized Access"
+
+
 
 @app.route('/api/getuserfavourites', methods=['POST'])
 def get_user_favourites():
-    data = request.json
-    id = data.get("id")
-    return fetch_userfavourites(id)
+    user_key = request.headers.get('Authorization')
+    test = check_for_key(user_key)
+    print(test)
+    if test:
+        data = request.json
+        id = data.get("id")
+        return fetch_userfavourites(id)
+    else:
+        return "Unathorized Access"
+
 
 @app.route('/api/checkuserfavourites', methods=['POST'])
 def check_if_user_favourite():
-    data = request.json
-    product_id = data.get("product_id")
-    id = data.get("id")
-    res = str(check_for_favourite(id, product_id))
-    response = {"message": res}
-    return response
+    user_key = request.headers.get('Authorization')
+    test = check_for_key(user_key)
+    if test:
+        data = request.json
+        product_id = data.get("product_id")
+        id = data.get("id")
+        res = str(check_for_favourite(id, product_id))
+        response = {"message": res}
+        return response
+    else:
+        return "Unathorized Access"
+
 
 @app.route('/api/getuser', methods=['POST'])
 def get_user():
-    data = request.json
-    email = data.get("email")
-    user = fetch_user(email)
+    user_key = request.headers.get('Authorization')
+    test = check_for_key(user_key)
+    if test:
+        data = request.json
+        email = data.get("email")
+        user = fetch_user(email)
         
-    user_data = {
-        "id": user[0][0],
-        "name": user[0][1],
-        "email": user[0][2],
-        "password": user[0][3],
-        "created_at": user[0][4],
-        "updated_at": user[0][5],
-    }
-    return jsonify({'user': user_data})
+        user_data = {
+            "id": user[0][0],
+            "name": user[0][1],
+            "email": user[0][2],
+            "password": user[0][3],
+            "created_at": user[0][4],
+            "updated_at": user[0][5],
+        }
+        return jsonify({'user': user_data})
+    else:
+        return "Unathorized Access"
+
+
+@app.route('/api/getuserid', methods=['POST'])
+def get_user_id():
+    user_key = request.headers.get('Authorization')
+    test = check_for_key(user_key)
+    if test:
+        data = request.json
+        email = data.get("email")
+        user = fetch_user(email)
+        user_data = {
+            "id": user[0][0]
+        }
+        return_data = {'user': user_data}
+        return jsonify(return_data)
+    else:
+        return "Unathorized Access"
+
 
 
 # http://127.0.0.1:5000/
